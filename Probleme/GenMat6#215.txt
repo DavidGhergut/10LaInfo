@@ -1,0 +1,32 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n cu exact 5 cifre şi construieşte în memorie o matrice cu 6 linii şi 6 coloane ale cărei elemente vor primi valori după cum urmează:
+
+elementele aflate pe diagonala principală sunt toate nule;
+elementele de pe linia 1, aflate deasupra diagonalei principale precum şi elementele de pe coloana 1, aflate sub diagonala principală au toate valoarea egală cu cifra unităţilor lui n;
+elementele de pe linia 2, aflate deasupra diagonalei principale precum şi elementele de pe coloana 2, aflate sub diagonala principală au toate valoarea egală cu cifra zecilor lui n;
+…
+elementele de pe linia 6, aflate deasupra diagonalei principale precum şi elementele de pe coloana 6, aflate sub diagonala principală au toate valoarea egală cu cifra zecilor de mii a lui n;
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int n, a[7][7];
+int main(){
+    cin >> n;
+    for (int i = 1; i < 6; i++){
+        for (int j = i + 1; j <= 6; j++){
+            a[i][j] = n % 10;
+            a[j][i] = n % 10;
+        }
+        n /= 10;
+    }
+    for (int i = 1; i <= 6; i++){
+        for (int j = 1; j <= 6; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

@@ -1,0 +1,38 @@
+CERINTA:
+
+Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afişeze, în ordine strict crescătoare, valorile existente în ambele şiruri.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("interclasare2.in");
+ofstream fout("interclasare2.out");
+int main(){
+    int n, m, a[100001], b[100001];
+    fin >> n;
+    for (int i = 1; i <= n; i++)
+        fin >> a[i];
+    fin >> m;
+    for (int i = 1; i <= m; i++)
+        fin >> b[i];
+    int x = 1, y = 1, nr = 0;
+    while (x <= n && y <= m){
+        if (a[x] > b[y])
+            y++;
+        else if (a[x] == b[y]){
+            if (nr % 10 == 0 && nr / 10 != 0)
+                fout << '\n';
+            nr++;
+            fout << a[x] << ' ';
+            x++;
+            y++;
+        }
+        else
+            x++;
+    }
+    return 0;
+}
+
+

@@ -1,0 +1,51 @@
+CERINTA:
+
+Se dă un număr natural x și două șiruri a și b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afișeze, în ordine crescătoare, multiplii lui x care se află doar în unul dintre cele două șiruri.
+
+SOLUTIE:
+
+#include <iostream>
+#include <algorithm>
+#include <fstream>
+
+using namespace std;
+ifstream fin("interclasm.in");
+ofstream fout("interclasm.out");
+long long v[100005], g[100005], p[200010];
+int main(){
+    long long x, n, m;
+    int k = 0;
+    fin >> x;
+    fin >> n;
+    for (int i = 0; i < n; i++)
+        fin >> v[i];
+    fin >> m;
+    for (int j = 0; j < m; j++)
+        fin >> g[j];
+    for (int i = 0; i < n; i++){
+        if (v[i] % x == 0){
+            p[k] = v[i];
+            k++;
+        }
+    }
+    for (int j = 0; j < m; j++){
+        if (g[j] % x == 0){
+            p[k] = g[j];
+            k++;
+        }
+    }
+    sort(p, p + k);
+    for(int i = 1; i < k; i++){
+        if(p[i] == p[i-1]){
+           p[i-1] = -1;
+           p[i] = -1;
+        }
+    }
+    for (int i = 0; i < k; i++){
+        if(p[i] != -1)
+            fout << p[i] << ' ';
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}

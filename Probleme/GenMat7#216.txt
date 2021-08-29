@@ -1,0 +1,33 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane în care elementele de pe cele două diagonale sunt egale cu 0, elementele care se află deasupra ambelor diagonale sunt egale cu 1, elementele care se află sub ambele diagonale sunt egale cu 2, iar restul elementelor sunt egale cu 3.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int n, a[26][26];
+int main(){
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            a[i][j] = 3;
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            if (i == j || j == n - i + 1)
+                a[i][j] = 0;
+            else if (i < j && j < n - i + 1)
+                a[i][j] = 1;
+            else if (i > j && j > n - i + 1)
+                a[i][j] = 2;
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

@@ -1,0 +1,35 @@
+CERINTA:
+
+Să se scrie un program care citeşte cel mult 1.000.000 de numere naturale din intervalul închis [0,9] şi determină cel mai mare număr prim citit şi numărul său de apariții.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("ciffrecv.in");
+ofstream fout("ciffrecv.out");
+int Este_Prim(int x){
+    if (x == 2)
+        return 1;
+    for (int d = 2; d * d <= x; d++){
+    	if (x % d == 0)
+            return 0;
+    }
+    return 1;
+}
+int main(){
+	int x, max_prim = 0, frecv = 0;
+    while (fin >> x){
+        if (x > max_prim && Este_Prim(x) == 1){
+            max_prim = x;
+            frecv = 1;
+        }
+        else if (x == max_prim)
+            frecv++;
+    }
+    fout << max_prim << ' ' << frecv;
+	return 0;
+}
+
+

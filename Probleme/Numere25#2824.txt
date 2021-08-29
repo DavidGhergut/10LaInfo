@@ -1,0 +1,40 @@
+CERINTA:
+
+Se dă un număr natural n și un șir de numere naturale din intervalul [1,n] ordonate crescător. Să se afișeze în ordine strict crescătoare toate numerele din intervalul [1,n] care nu se găsesc în șirul dat. Dacă nu există asemenea numere se afișează Nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("numere25.in");
+ofstream fout("numere25.out");
+int main(){
+    int n, x, y;
+    bool ok = false;
+    fin >> n >> x;
+    if (1 < x){
+        for (int i = 1; i < x; i++)
+            fout << i << ' ';
+        ok = true;
+    }
+    y = x;
+    while (fin >> x){
+        if (x - y - 1 > 0){
+            for (int i = y + 1; i < x; i++)
+                fout << i << ' ';
+            ok = true;
+        }
+        y = x;
+    }
+    if (n > x){
+        for (int i = x + 1; i <= n; i++)
+            fout << i << ' ';
+        ok = true;
+    }
+    if (ok == false)
+        fout << "Nu exista";
+    fin.close();
+    fout.close();
+    return 0;
+}

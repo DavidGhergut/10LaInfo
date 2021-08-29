@@ -1,0 +1,54 @@
+CERINTA:
+
+Se dă un șir de cel mult un milion de numere naturale din intervalul [0,109], separate prin câte un spațiu. Șirul are cel puțin doi termeni pari și cel puțin doi termeni impari.
+
+Se cere să se afișeze mesajul DA dacă șirul aflat în fișier are un subșir ordonat crescător, format din toți termenii pari ai săi, și un subșir ordonat descrescător, format din toți termenii impari ai săi. Dacă nu există două astfel de subșiruri, programul afișează pe ecran mesajul NU.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("sir13.in");
+ofstream fout("sir13.out");
+int main(){
+    int x, imp, par;
+    bool ok = false, ok1 = false, ok_par = false, ok_impar = false;
+    while (fin >> x){
+        if (x % 2 == 0){
+            if (ok == false){
+                par = x;
+                ok = true;
+            }
+            else if (x < par){
+                ok_par = false;
+                break;
+            }
+            else if (x > par){
+                par = x;
+                ok_par = true;
+            }
+        }
+        else{
+            if (ok1 == false){
+                imp = x;
+                ok1 = true;
+            }
+            else if (x > imp){
+                ok_impar = false;
+                break;
+            }
+            else if (x < imp){
+                imp = x;
+                ok_impar = true;
+            }
+        }
+    }
+    if (ok_par == true && ok_impar == true)
+        fout << "DA";
+    else
+        fout << "NU";
+    return 0;
+}
+
+

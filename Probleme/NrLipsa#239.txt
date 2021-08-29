@@ -1,0 +1,34 @@
+CERINTA:
+
+Se dau mai multe numere naturale cu cel mult 9 cifre fiecare. Să se determine cele mai mari două numere de 3 cifre care nu se găsesc printre numerele date.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("nrlipsa.in");
+ofstream fout("nrlipsa.out");
+
+int v[1000];
+
+int main(){
+    int x;
+    while(fin>>x)
+        if(x<1000)
+            v[x] = 1;
+    int max1=1000,max2=1000;
+    for(int i=999; i>99 && max2==1000 ; i--)
+        if(v[i]==0)
+            if(max1==1000)
+                max1 = i;
+            else
+                max2 = i;
+    if(max2==1000)
+        fout << "NU";
+    else
+        fout << max1 << " " << max2;
+    return 0;
+}

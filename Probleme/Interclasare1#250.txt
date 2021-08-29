@@ -1,0 +1,71 @@
+CERINTA:
+
+Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afişeze, în ordine strict crescătoare, valorile existente în cel puţin unul dintre cele două şiruri. În cazul în care o valoare apare în ambele şiruri, va fi afişată o singură dată.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+    ifstream f("interclasare1.in");
+    ofstream g("interclasare1.out");
+    int n,m,i,j,k;   
+    int a[100005],b[100005],c[200005];
+    
+    f>>n;
+    for(i=0;i<n;i++)
+        f>>a[i];
+    
+    f>>m;
+    for(j=0;j<m;j++)
+        f>>b[j];
+    
+    i = j = k = 0; 
+    // interclasare
+    while( (i<n) && (j<m)){
+        
+        if(a[i]==b[j]){
+            c[k] = a[i];
+            i++;
+            j++;
+        }
+        else if(a[i]<b[j])
+        {
+            c[k] = a[i];
+            i++;
+            
+        }
+        else {
+            c[k] = b[j];
+            j++;
+        }
+        
+        k++;
+    }
+    
+    if(i>=n)
+        for(int ind=j;ind<m;ind++){
+            c[k] = b[ind];
+            k++;
+        }
+    else 
+        for(int ind=i;ind<n;ind++){
+            c[k] = a[ind];
+            k++;
+        }
+    
+    for(i=0;i<k;i++){
+       if(i%10==0 && i!=0)
+         g<<endl;
+        
+       g<<c[i]<<" ";
+        
+    }
+    
+    f.close();
+    g.close();
+    return 0;
+}

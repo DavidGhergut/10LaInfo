@@ -1,0 +1,28 @@
+CERINTA:
+
+Se dau n numere numere naturale cu cel mult două cifre fiecare. Să se determine acele numere care apar o singură dată.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+ifstream fin("unice.in");
+ofstream fout("unice.out");
+int frecv[102], x, n;
+int main(){
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        fin >> x;
+        frecv[x]++;
+    }
+    for (int j = 0; j <= 100; j++){
+        if (frecv[j] == 1)
+            fout << j << ' ';
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}
+
