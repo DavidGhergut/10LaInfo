@@ -1,0 +1,32 @@
+CERINTA:
+
+Considerăm următorul șir, în care n este un număr natural nenul: 
+    0, n = 1
+f   3, n = 2
+    2 * f(n - 1) - f(n - 2) + 2, n > 2
+    
+Primii termeni ai acestui șir sunt: 0, 3, 8, 15, 24, 35, 48, 63, 80 ....
+
+Se citesc două numere naturale din intervalul [0,109], x și y, reprezentând valorile a doi termeni aflați pe poziții consecutive în șirul dat (x<y), și se cere să se afișeze, în ordine strict descrescătoare, separați prin câte un spațiu, toţi termenii șirului mai mici sau egali cu y.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("pozitiiconsecutive.in");
+ofstream fout("pozitiiconsecutive.out");
+int main(){
+    int x, y, m;
+    fin >> x >> y;
+    fout << y << ' ' << x << ' ';
+    m = 2 * x - y + 2;
+    while (m >= 0){
+        fout << m << ' ';
+        y = x;
+        x = m;
+        m = 2 * x - y + 2;
+    }
+    return 0;
+}
+

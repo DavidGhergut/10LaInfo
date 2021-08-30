@@ -1,0 +1,40 @@
+CERINTA:
+
+Numim secvență uniformă a unui șir de numere naturale un subșir al acestuia, format din termeni cu aceeași valoare, aflați pe poziții consecutive în șirul dat. Lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+Se dă un șir de cel puțin două și cel mult 1000000 de numere naturale din intervalul [0,109]. În șir există cel puțin doi termeni egali pe poziții consecutive. Se cere să se determine o secvență uniformă de lungime maximă în șirul dat și să se afișeze pe lungimea acestei secvențe și termenii acesteia. Dacă sunt mai multe astfel de secvențe, se afișează doar termenii ultimei dintre acestea.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("secventauniforma.in");
+ofstream fout("secventauniforma.out");
+int main(){
+    int nr, maxim = 0, x, elem, maxim_elem;
+    fin >> x;
+    elem = x;
+    nr = 1;
+    while (fin >> x){
+        if (elem == x)
+            nr++;
+        else{
+            if (nr >= maxim){
+                maxim = nr;
+                maxim_elem = elem;
+            }
+            nr = 1;
+            elem = x;
+        }
+    }
+    if (nr >= maxim){
+        maxim = nr;
+        maxim_elem = elem;
+    }
+    fout << maxim << '\n';
+    for (int i = 1; i <= maxim; i++)
+        fout << maxim_elem << ' ';
+    return 0;
+}
+
