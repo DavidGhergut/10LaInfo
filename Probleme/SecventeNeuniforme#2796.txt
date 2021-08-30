@@ -1,0 +1,36 @@
+CERINTA:
+
+Numim secvență neuniformă a unui șir de numere naturale un subșir al acestuia, format din termeni aflați pe poziții consecutive în șirul dat, cu proprietatea că oricare trei termeni aflați pe poziții consecutive sunt diferiți. Lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+Se dă un șir de cel mult 106 numere naturale din intervalul [0,9], în care există cel puțin trei termeni diferiți pe poziții consecutive. Se cere să se afișeze lungimea maximă a unei secvențe neuniforme a șirului dat.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("secventeneuniforme.in");
+ofstream fout("secventeneuniforme.out");
+int main(){
+    int x, y, z, nr = 2, maxim = 0;
+    fin >> x;
+    z = x;
+    fin >> x;
+    y = x;
+    while (fin >> x){
+        if (x != y && y != z && z != x)
+            nr++;
+        else{
+            if (nr > maxim)
+                maxim = nr;
+            nr = 2;
+        }
+        z = y;
+        y = x;
+    }
+    if (nr > maxim)
+        maxim = nr;
+    fout << maxim;
+    return 0;
+}
+

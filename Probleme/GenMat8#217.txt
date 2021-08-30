@@ -1,0 +1,28 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane, numerotate de la 1 la n, în care elementele de pe liniile cu indice impar sunt egale cu indicele de linie, iar elementele situate pe linii cu indice par sunt egale cu indicele de coloană.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int a[25][25];
+int main(){
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            if (i % 2 == 1)
+                a[i][j] = i;
+            else
+                a[i][j] = j;
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

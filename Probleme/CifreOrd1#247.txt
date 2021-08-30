@@ -1,0 +1,36 @@
+CERINTA:
+
+Se dau mai multe numere naturale, fiecare cu cel mult 9 cifre. Să se afişeze, în ordine descrescătoare, toate cifrele care apar în numerele date.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("cifreord1.in");
+ofstream fout("cifreord1.out");
+int frecv[11], x, nr;
+int main(){
+    while (fin >> x){
+       	if (x == 0)
+            frecv[0]++;
+        else{
+            while (x > 0){
+                frecv[x % 10]++;
+                x /= 10;
+            }
+        }
+    }
+    for (int i = 9; i >= 0; i--){
+        while (frecv[i] > 0){
+            if (nr % 20 == 0 && nr / 20 != 0)
+                fout << '\n';
+            nr++;
+            frecv[i]--;
+            fout << i << ' ';
+        }
+    }
+    return 0;
+}
+
+

@@ -1,0 +1,40 @@
+CERINTA:
+
+Scrieți un program care citește de la tastatură două numere naturale din intervalul [2,50], n și m, și elementele unui tablou bidimensional cu n linii și m coloane, numere naturale distincte din intervalul [0,104].
+
+Programul interschimbă valoarea minimă din ultima coloană a tabloului cu valoarea minimă din prima coloană a tabloului, apoi afișează pe ecran tabloul modificat, câte o linie a tabloului pe câte o linie a ecranului, elementele fiecărei linii fiind separate prin câte un spațiu.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, m, a[51][51], minim1 = 10000, minim2 = 10000, x_1, y_1, x_2, y_2;
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++){
+            cin >> a[i][j];
+            if (j == 1 && a[i][j] < minim1){
+                minim1 = a[i][j];
+                x_1 = i;
+                y_1 = j;
+            }
+            else if (j == m && a[i][j] < minim2){
+                minim2 = a[i][j];
+                x_2 = i;
+                y_2 = j;
+            }
+        }
+    }
+    int aux = a[x_1][y_1];
+    a[x_1][y_1] = a[x_2][y_2];
+    a[x_2][y_2] = aux;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
+

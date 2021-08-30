@@ -1,0 +1,37 @@
+CERINTA:
+
+Numim inserare a unui șir A într-un șir B introducerea, între două elemente ale șirului B, a tuturor elementelor lui A, pe poziții consecutive, în ordinea în care apar în A.
+
+Se dau două șiruri cu n, respectiv m elemente numere întregi ordonate strict crescător, în care numerotarea elementelor începe de la 1.
+
+Se cere să se afișeze poziția din al doilea șir începând de la care poate fi inserat primul șir, astfel încât șirul obținut să fie strict crescător. Dacă nu există o astfel de poziție, se afișează mesajul imposibil.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("inserare2.in");
+ofstream fout("inserare2.out");
+int main(){
+    int n, m, x1, y1, x2, y2;
+    bool ok = false;
+    fin >> n >> m;
+    fin >> x1;
+    for (int i = 1; i < n; i++)
+        fin >> y1;
+    fin >> x2;
+    for (int i = 2; i <= m; i++){
+        fin >> y2;
+        if (x1 > x2 && y1 < y2){
+            fout << i << ' ';
+            ok = true;
+            break;
+        }
+        x2 = y2;
+    }
+    if (ok == false)
+        fout << "imposibil";
+    return 0;
+}
+

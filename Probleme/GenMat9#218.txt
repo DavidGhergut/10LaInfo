@@ -1,0 +1,28 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane, numerotate de la 1 la n, în care fiecare element aflat pe chenarul exterior al matricei este egal cu suma dintre indicele liniei şi indicele coloanei pe care se află, iar fiecare dintre celelalte elemente este egal cu suma celor trei “vecini” situaţi în matrice pe linia anterioară.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int n, a[16][16];
+int main(){
+	int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+    	a[i][1] = a[1][i] = i + 1;
+        a[n][i] = a[i][n] = n + i;
+    }
+    for (int i = 2; i <= n - 1; i++){
+    	for (int j = 2; j <= n - 1; j++)
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j] + a[i - 1][j + 1];
+    }
+    for (int i = 1; i <= n; i++){
+    	for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+	return 0;
+}
