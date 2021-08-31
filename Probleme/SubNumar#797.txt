@@ -1,0 +1,31 @@
+CERINTA:
+
+Un număr natural x, format din exact două cifre, este numit sub-număr al unui număr natural y dacă cifrele lui x apar, în aceeași ordine, pe ranguri consecutive, în numărul y.
+Exemplu: 21 este sub-număr al lui 12145, al lui 213, al lui 21, dar nu și al lui 123 sau al lui 231.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+ifstream fin("subnumar.in");
+ofstream fout("subnumar.out");
+int ap[99], a, nrmap = 0;
+int main(){
+    while(fin >> a){
+        while(a > 9){
+            ap[a % 100]++;
+            if(ap[a % 100] > nrmap)
+                nrmap = ap[a % 100];
+            a /= 10;
+        }
+    }
+    for(int i = 99; i >= 10; i--){
+        if(ap[i] == nrmap)
+            fout << i << ' ';
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}

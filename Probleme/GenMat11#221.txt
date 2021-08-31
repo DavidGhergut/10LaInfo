@@ -1,0 +1,27 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane, numerotate de la 1 la n, în care se vor memora în ordinea crescătoare a valorii, pe linii şi coloane, primele n*n numere naturale nenule, pare, care nu sunt divizibile cu 3.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, x = 2, a[21][21];
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            while (x % 3 == 0)
+                x += 2;
+            a[i][j] = x;
+            x += 2;
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

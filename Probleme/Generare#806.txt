@@ -1,0 +1,35 @@
+CERINTA:
+
+Se consideră şirul definit mai jos:
+
+        1                   daca n = 1
+f(n) =  1 + f(n - 1)        daca n = par
+        1 + 2 * f(n - 2)    altfel
+
+în care nu există doi termeni cu aceeași paritate aflați pe poziții consecutive: 1, 2, 3, 4, 7, 8, 15, 16 .....
+
+Pentru un număr natural x, termen al şirului dat, se cere să se afișeze pe ecran, în ordine strict descrescătoare, separați prin câte un spațiu, toţi termenii şirului care sunt mai mici sau egali cu x.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+void generare(int numar){
+    if (numar > 1)
+    {
+        cout << numar << " ";
+        if (numar % 2 == 0)
+            generare(numar - 1);
+        else
+            generare(numar / 2 + 1);
+    }
+    else
+        cout << 1;
+}
+int main(){
+    int numar;
+    cin >> numar;
+    generare(numar);
+    return 0;
+}

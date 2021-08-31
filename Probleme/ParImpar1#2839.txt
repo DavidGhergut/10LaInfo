@@ -1,0 +1,31 @@
+CERINTA:
+
+Se dă un număr natural, n (n∈[2,5000]), și un șir de 2·n numere naturale din intervalul [0,5]. Se cere să se determine valoarea obținută însumând toate produsele de forma x·y, unde x și y sunt numere de paritate diferită, x fiind printre primii n termeni ai șirului dat, iar y printre ultimii n termeni ai acestui șir. Dacă nu există niciun astfel de produs, valoarea cerută este nulă.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("parimpar1.in");
+ofstream fout("parimpar1.out");
+int n, x, s1, s2, s3, s4;
+int main(){
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        fin >> x;
+        if (x % 2 == 0)
+            s1 += x;
+        else
+            s2 += x;
+    }
+    for (int i = 1; i <= n; i++){
+        fin >> x;
+        if (x % 2 == 0)
+            s3 += x;
+        else
+            s4 += x;
+    }
+    fout << s1 * s4 + s2 * s3;
+    return 0;
+}

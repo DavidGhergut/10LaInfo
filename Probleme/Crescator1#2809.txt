@@ -1,0 +1,38 @@
+CERINTA:
+
+Scrieți un program care citește un șir de cel mult 106 numere naturale din intervalul [0,109 ] ordonate crescător și determină cel mai mic număr din șir care apare de un număr impar de ori. Dacă în șir nu se află o astfel de valoare, se afișează mesajul nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("crescator1.in");
+ofstream fout("crescator1.out");
+int main(){
+    int x, y, nr;
+    bool ok = false;
+    fin >> x;
+    y = x;
+    nr = 1;
+    while (fin >> x){
+        if (y == x)
+            nr++;
+        else{
+            if (nr % 2 == 1){
+                fout << y << ' ';
+                ok = true;
+                break;
+            }
+            nr = 1;
+        }
+        y = x;
+    }
+    if (nr % 2 == 1 && ok == false){
+        fout << y << ' ';
+        ok = true;
+    }
+    if (ok == false)
+        fout << "nu exista";
+    return 0;
+}

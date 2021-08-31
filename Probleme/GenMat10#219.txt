@@ -1,0 +1,26 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură două numere naturale nenule n şi m şi care construieşte în memorie şi apoi afişează o matrice A cu n linii şi m coloane astfel încât prin parcurgerea acesteia linie cu linie de sus în jos şi fiecare linie de la stânga la dreapta, se obţin în ordine descrescătoare toate numerele naturale de la 1 la m*n.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, m, x, a[25][25];
+    cin >> n >> m;
+    x = n * m;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++){
+            a[i][j] = x;
+            x--;
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
