@@ -1,0 +1,32 @@
+CERINTE:
+
+Se dă un șir de cel mult un milion de numere naturale din intervalul [0,102]. Se cere să se determine toate perechile distincte formate din termeni ai șirului dat, x și y (y-x≥2), astfel încât să nu existe niciun termen al șirului care să aparțină intervalului (x,y). Dacă nu există nicio astfel de pereche, se afișează mesajul nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("intervale5.in");
+ofstream fout("intervale5.out");
+int frecv[101];
+int main(){
+    int x, y, nr = 0;
+    while (fin >> x)
+        frecv[x] = 1;
+    while (frecv[nr] == 0)
+        nr++;
+    bool ok = false;
+    for (int i = nr + 1; i <= 100; i++){
+        if (frecv[i] == 1){
+            if (i - nr >= 2){
+                fout << nr << ' ' << i << '\n';
+                ok = true;
+            }
+            nr = i;
+        }
+    }
+    if (ok == false)
+        fout << "nu exista";
+    return 0;
+}

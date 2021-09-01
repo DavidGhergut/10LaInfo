@@ -1,0 +1,35 @@
+CERINTA:
+
+Se consideră un șir de cel mult 106 numere naturale distincte din intervalul [1,109]. Se cere să se determine cei mai mari doi termeni pari din șir care sunt precedați de doar trei termeni impari.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("sir12.in");
+ofstream fout("sir12.out");
+int main(){
+    int x, nr = 0, maxim1 = 0, maxim2 = 0;
+    bool ok = false, ok1 = false;
+    while (fin >> x){
+        if (x % 2 == 0 && nr == 3){
+            if (x > maxim1){
+                maxim2 = maxim1;
+                maxim1 = x;
+                ok = true;
+            }
+            else if (x > maxim2){
+                maxim2 = x;
+                ok1 = true;
+            }
+        }
+        else if (x % 2 == 1)
+            nr++;
+    }
+    if (ok == true && ok1 == true && maxim1 != maxim2)
+        fout << maxim2 << ' ' << maxim1;
+    else
+        fout << "Nu exista";
+    return 0;
+}

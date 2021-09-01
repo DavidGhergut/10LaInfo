@@ -1,0 +1,40 @@
+CERINTA:
+
+Fișierul de intrare conține cel puțin 3 și cel mult 1 000 000 de numere naturale. Se cere să se afișeze în fișierul de ieșire, separate printr-un spaţiu, două numere distincte, anume cel mai mic număr par cu două cifre și cel mai mare număr par cu două cifre care NU fac parte din şir.
+
+Dacă nu există două astfel de valori, în fișierul de ieșire se afişează mesajul nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("nrlipsa1.in");
+ofstream fout("nrlipsa1.out");
+int frecv[101];
+int main(){
+    int x, st, dr, nr = 0;
+    while (fin >> x){
+        if (x < 100 && x > 9)
+            frecv[x]++;
+    }
+    for (int i = 10; i <= 98; i += 2){
+        if (frecv[i] == 0){
+            st = i;
+            nr++;
+            break;
+        }
+    }
+    for (int i = 98; i >= 10; i -= 2){
+        if (frecv[i] == 0){
+            dr = i;
+            nr++;
+            break;
+        }
+    }
+    if (nr == 2 && st != dr)
+        fout << st << ' ' << dr;
+    else
+        fout << "nu exista";
+    return 0;
+}
