@@ -1,0 +1,46 @@
+CERINTA:
+
+Se dă un număr natural n (1≤n≤106 ), și un șir cu cel mult 1000000 de elemente, numere naturale de forma 10p (0≤p≤9). Se cere să se afișeze numărul care ar apărea pe poziția n în șirul ordonat crescător. Dacă șirul are mai puțin de n termeni, se afișează mesajul Nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("puteri6.in");
+ofstream fout("puteri6.out");
+int frecv[10];
+int main(){
+    int n, x, p = 1, nr;
+    bool ok = false;
+    fin >> n;
+    while (fin >> x){
+        nr = 0;
+        while (x > 9){
+            nr++;
+            x /= 10;
+        }
+        frecv[nr]++;
+    }
+    for (int i = 0; i <= 9; i++){
+        while (frecv[i] > 0 && n > 0){
+            if (n == 1){
+                ok = true;
+                while (i > 0){
+                    p *= 10;
+                    i--;
+                }
+                break;
+            }
+            frecv[i]--;
+            n--;
+        }
+        if (ok == true)
+            break;
+    }
+    if (ok == true)
+        fout << p;
+    else
+        fout << "Nu exista";
+    return 0;
+}

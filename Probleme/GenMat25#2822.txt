@@ -1,0 +1,32 @@
+CERINTA:
+
+Scrieți un program care citește de la tastatură un număr natural, n și construiește în memorie un tablou bidimensional, cu n linii și n coloane, astfel:
+
+prima coloană conține, în ordine strict crescătoare, numerele naturale din intervalul [1,n];
+toate elementele ultimei linii au valoarea n;
+oricare alt element este obținut prin însumarea celor două elemente vecine cu el, aflate pe coloana anterioară, unul pe aceeași linie cu el, iar celălalt pe linia următoare.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int a[21][21];
+int main(){
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        a[i][1] = i;
+        a[n][i] = n;
+    }
+    for (int i = n - 1; i >= 1; i--){
+        for (int j = 2; j <= n; j++)
+            a[i][j] = a[i][j - 1] + a[i + 1][j - 1];
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
