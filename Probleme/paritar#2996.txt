@@ -1,0 +1,39 @@
+CERINTA:
+
+Un șir format din 2•n numere naturale se numește paritar dacă fiecare dintre primii săi n termeni fie are aceeași paritate cu oricare dintre ultimii săi n termeni, fie este strict mai mic decât oricare număr de paritate diferită aflat printre aceștia.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("paritar.in");
+ofstream fout("paritar.out");
+int max1, max2, min1 = 2000000000, min2 = 2000000000;
+int main(){
+    int n, x;
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        fin >> x;
+        if (x % 2 == 1)
+            max1 = max(max1, x);
+        else
+            max2 = max(max2, x);
+    }
+    for (int i = n + 1; i <= 2 * n; i++){
+        fin >> x;
+        if (x % 2 == 1)
+            min1 = min(min1, x);
+        else
+            min2 = min(min2, x);
+    }
+    if (max1 == 0 && min1 == 2000000000)
+        fout << "DA";
+    else if (max2 == 0 && min2 == 2000000000)
+        fout << "DA";
+    else if (max1 < min2 && max2 < min1)
+        fout << "DA";
+    else
+        fout << "NU";
+    return 0;
+}

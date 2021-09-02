@@ -1,0 +1,36 @@
+CERINTA:
+
+Se consideră şirul lui Fibonacci, definit astfel:  f1=1 ,  f2=1 ,  fn=fn-1+fn-2 , dacă n>2.
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane ale cărei elemente sunt numere naturale, fiecare reprezentând ultima cifră a câte unui termen al şirului lui Fibonacci, începând de la termenul de indice 1 şi până la termenul de indice  n2 .
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, f1 = 1, f2 = 1, f, a[25][25];
+    cin >> n;
+    a[1][1] = a[1][2] = 1;
+    for (int i = 3; i <= n; i++){
+        f = (f1 + f2) % 10;
+        a[1][i] = f;
+        f1 = f2;
+        f2 = f;
+    }
+    for (int i = 2; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            f = (f1 + f2) % 10;
+            a[i][j] = f;
+            f1 = f2;
+            f2 = f;
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

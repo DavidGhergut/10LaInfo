@@ -1,0 +1,36 @@
+CERINTA:
+
+Scrieți un program care citește de la tastatură un număr natural par n (n∈[2,50]) și elementele unui tablou bidimensional cu n linii și n coloane, numere reale, apoi transformă tabloul în memorie, inserând o linie nouă, la mijlocul său, valoarea fiecărui element al acesteia fiind egală cu media aritmetică a elementelor aflate pe coloana corespunzătoare lui în tabloul citit. Tabloul obținut se afișează pe ecran, câte o linie a tabloului pe câte o linie a ecranului, elementele fiecărei linii fiind separate prin câte un spațiu.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n;
+    double a[52][52], suma;
+    cin >> n;
+    for (int i = 1; i <= n / 2; i++){
+        for (int j = 1; j <= n; j++)
+            cin >> a[i][j];
+    }
+    for (int i = n / 2 + 2; i <= n + 1; i++){
+        for (int j = 1; j <= n; j++)
+            cin >> a[i][j];
+    }
+    for (int j = 1; j <= n; j++){
+        suma = 0;
+        for (int i = 1; i <= n + 1; i++){
+            if (i != n / 2 + 1)
+                suma += a[i][j];
+        }
+        a[n / 2 + 1][j] = suma / n;
+    }
+    for (int i = 1; i <= n + 1; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

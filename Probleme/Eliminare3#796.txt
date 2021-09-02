@@ -1,0 +1,30 @@
+CERINTA:
+
+Se dă o matrice cu m linii și n coloane și elemente numere naturale cu cel mult patru cifre. Să se modifice matricea, eliminând penultima linie și penultima coloană.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int m, n, a[51][51];
+    cin >> m >> n;
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n; j++)
+            cin >> a[i][j];
+    }
+    for (int i = 1; i <= n - 2; i++)
+        a[m - 1][i] = a[m][i];
+    for (int j = 1; j <= m - 2; j++)
+        a[j][n - 1] = a[j][n];
+    a[m - 1][n - 1] = a[m][n];
+    m--;
+    n--;
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

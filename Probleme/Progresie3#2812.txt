@@ -1,0 +1,36 @@
+CERINTA:
+
+Un șir de numere este o progresie aritmetică de rație r dacă oricare termen al său, cu excepția primului, se obține din cel care îl precede, prin adunarea la acesta a numărului r. Exemplu: șirul 12, 14, 16, 18, 20 este o progresie de rație 2.
+
+Se dă un șir de cel mult 106 numere naturale din intervalul [0,103]. Se cere să se verifice dacă există un număr natural r, astfel încât toate numerele distincte din șir să poată fi rearanjate, pentru a forma o progresie aritmetică de rație r. Se afișează numărul r, sau mesajul NU, dacă nu există un astfel de număr.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("progresie3.in");
+ofstream fout("progresie3.out");
+int frecv[1001], v[1001];
+int main(){
+    int x, k = 0, r;
+    bool ok = true;
+    while (fin >> x)
+        frecv[x]++;
+    for (int i = 0; i <= 1000; i++){
+        if (frecv[i] > 0){
+            k++;
+            v[k] = i;
+        }
+    }
+    r = v[2] - v[1];
+    for (int i = 3; i <= k; i++){
+        if (v[i] - v[i - 1] != r)
+            ok = false;
+    }
+    if (ok == true)
+        fout << r;
+    else
+        fout << "NU";
+    return 0;
+}

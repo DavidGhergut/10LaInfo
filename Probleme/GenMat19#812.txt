@@ -1,0 +1,31 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane în care:
+
+toate elementele de pe prima coloană au valoarea 1;
+ultima linie conţine, în ordine strict crescătoare, numerele naturale din intervalul [1, n];
+oricare alt element este obţinut prin însumarea celor două elemente vecine cu el, aflate pe linia imediat următoare şi pe aceeaşi coloană cu el, respectiv pe aceeaşi linie cu el şi pe coloana anterioară.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, a[16][16];
+    cin >> n;
+    for (int i = 1; i <= n; i ++){
+        a[i][1] = 1;
+        a[n][i] = i;
+    }
+    for (int i = n - 1; i >= 1; i--){
+        for (int j = 2; j <= n; j++)
+            a[i][j] = a[i][j - 1] + a[i + 1][j];
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

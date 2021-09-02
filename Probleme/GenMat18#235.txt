@@ -1,0 +1,46 @@
+CERINTA:
+
+Se consideră şirul Fibonacci, definit astfel:  f1=1 ,  f2=1 ,  fn=fn-1+fn-2 , dacă n>2.
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu n linii şi n coloane, astfel încât parcurgând liniile matricei de sus în jos şi de la stânga la dreapta se obţin, în prima linie primele n numere ale şirului Fibonacci în ordine crescătoare, în linia a doua următoarele n numere ale şirului Fibonacci în ordine descrescătoare, în linia a treia următoarele n numere ale acestui şir în ordine crescătoare, şi aşa mai departe.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, a[7][7], f1 = 1, f2 = 1, f;
+    cin >> n;
+    a[1][1] = a[1][2] = 1;
+    for (int j = 3; j <= n; j++){
+        f = f1 + f2;
+        a[1][j] = f;
+        f1 = f2;
+        f2 = f;
+    }
+    for (int i = 2; i <= n; i++){
+        if (i % 2 == 0){
+            for (int j = n; j >= 1; j--){
+                f = f1 + f2;
+                a[i][j] = f;
+                f1 = f2;
+                f2 = f;
+            }
+        }
+        else{
+            for (int j = 1; j <= n; j++){
+                f = f1 + f2;
+                a[i][j] = f;
+                f1 = f2;
+                f2 = f;
+            }
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

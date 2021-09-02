@@ -1,0 +1,36 @@
+CERINTA:
+
+Se consideră un tablou bidimensional cu n linii şi n coloane ce conţine numere naturale cu cel mult două cifre fiecare.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("mincols1.in");
+ofstream fout("mincols1.out");
+int main(){
+    int n, a[31][31], p = 1, minim;
+    bool ok = false;
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            fin >> a[i][j];
+    }
+    for (int j = 1; j <= n; j++){
+        minim = 100;
+        for (int i = 1; i <= n; i++){
+            if (a[i][j] < minim)
+                minim = a[i][j];
+        }
+        if (minim == a[n - j + 1][j]){
+            ok = true;
+            p *= minim;
+        }
+    }
+    if (ok == false)
+        fout << "NU EXISTA";
+    else 
+        fout << p % 10;
+    return 0;
+}

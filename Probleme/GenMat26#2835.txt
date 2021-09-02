@@ -1,0 +1,32 @@
+CERINTA:
+
+Scrieţi un program care citește de la tastatură un număr natural, n (n∈[2,20]), apoi n numere naturale din intervalul [0,104], reprezentând, de la stânga la dreapta, în această ordine, valorile elementelor aflate pe prima linie a unui tablou bidimensional cu n linii și n coloane. Programul construiește în memorie tabloul, inițializând celelalte elemente, astfel încât fiecare linie să se obțină prin permutarea circulară a elementelor liniei
+anterioare, de la stânga spre dreapta, cu o poziție.
+
+Programul afişează pe ecran tabloul obținut, fiecare linie a tabloului pe câte o linie a ecranului, elementele de pe aceeași linie fiind separate prin câte un spațiu.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, x, a[21][21];
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        cin >> x;
+        a[1][i] = x;
+    }
+    for (int i = 2; i <= n; i++){
+        x = a[i - 1][n];
+        for (int j = n; j >= 2; j--)
+            a[i][j] = a[i - 1][j - 1];
+        a[i][1] = x;
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

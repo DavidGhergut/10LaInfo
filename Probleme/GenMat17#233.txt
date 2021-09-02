@@ -1,0 +1,31 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură un număr natural n şi construieşte în memorie o matrice cu 2*n linii şi 2*n coloane, numerotate de la 1 la 2*n, astfel încât parcurgând doar liniile impare ale matricei de sus în jos şi fiecare linie impară de la stânga la dreapta se obţin în ordine strict crescătoare toate numerele impare cuprinse în intervalul [1,4*n2], iar parcurgând doar liniile pare ale matricei de sus în jos şi fiecare linie pară de la dreapta la stânga se obţin în ordine strict crescătoare toate numerele pare cuprinse în intervalul [1,4*n2].
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, a[21][21], imp = 1, par = 2;
+    cin >> n;
+    for (int i = 1; i <= 2 * n - 1; i += 2){
+        for (int j = 1; j <= 2 * n; j++){
+            a[i][j] = imp;
+            imp += 2;
+        }
+    }
+    for (int i = 2; i <= 2 * n; i += 2){
+        for (int j = 2 * n; j >= 1; j--){
+            a[i][j] = par;
+            par += 2;
+        }
+    }
+    for (int i = 1; i <= 2 * n; i++){
+        for (int j = 1; j <= 2 * n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}

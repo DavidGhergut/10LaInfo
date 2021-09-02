@@ -1,0 +1,29 @@
+CERINTA:
+
+Fişierul text sort2.in conţine, dispuse pe mai multe linii, cel mult 100 de numere naturale, cu cel mult 4 cifre fiecare. Să se afişeze în fişierul sort2.out, în ordine crescătoare, toate numerele din fişierul sort2.in care au cel mult 2 cifre.
+
+SOLUTIE:
+
+#include <fstream>
+#include <algorithm>
+
+using namespace std;
+ifstream fin("sort2.in");
+ofstream fout("sort2.out");
+int main(){
+    int x, nr = 0, v[101];
+    while (fin >> x){
+        if (x < 100){
+            nr++;
+            v[nr] = x;
+        }
+    }
+    if (nr == 0)
+        fout << "NU EXISTA";
+    else{
+        sort(v + 1, v + nr + 1);
+        for (int i = 1; i <= nr; i++)
+            fout << v[i] << ' ';
+    }
+    return 0;
+}

@@ -1,0 +1,39 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură două numere naturale n şi m şi construieşte în memorie o matrice cu n linii şi m coloane care conţine numerele naturale de la 1 la m*n, dispuse astfel:
+
+prima linie conţine numerele de la 1 la m, ordonate crescător;
+a doua linie conţine numerele de la m+1 la 2*m, ordonate descrescător;
+a treia linie conţine numerele de la 2*m+1 la 3*m, ordonate crescător;
+a patra linie conţine numerele de la 3*m+1 la 4*m, ordonate descrescător;
+etc.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, m, nr = 0, a[16][16];
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++){
+        if (i % 2 == 1){
+            for (int j = 1; j <= m; j++){
+                nr++; 
+                a[i][j] = nr;
+            }
+        }
+        else{
+            for (int j = m; j >= 1; j--){
+                nr++;
+                a[i][j] = nr;
+            }
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
