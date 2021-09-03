@@ -1,0 +1,30 @@
+CERINTA:
+
+Scrieți un program care citește de la tastatură un număr natural n (n∈[2,100]) și un șir de n numere naturale din intervalul [0,10000] și construiește în memorie un tablou bidimensional cu n linii și n coloane, numerotate începând de la 0, astfel încât parcurgând orice coloană numerotată cu un număr par, de jos în sus, sau orice coloană numerotată cu un număr impar, de sus în jos, se obține șirul citit.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, a[101][101], v[101];
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> v[i];
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++){
+            if (i % 2 == 1)
+                a[j][i] = v[n - j + 1];
+            else
+                a[j][i] = v[j];
+        }
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            cout << a[i][j] << ' ';
+        cout << '\n';
+    }
+    return 0;
+}
+

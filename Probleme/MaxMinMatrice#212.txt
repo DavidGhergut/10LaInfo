@@ -1,0 +1,29 @@
+CERINTA:
+
+Se consideră tabloul bidimensional cu m linii şi n coloane ce conţine numere naturale cu cel mult patru cifre fiecare.
+
+Să se determine cea mai mică valoare de pe fiecare linie, iar dintre acestea să se determine valoarea maximă.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("maxminmatrice.in");
+ofstream fout("maxminmatrice.out");
+int main(){
+    int n, m, a[24][24], minim, maxim = 0;
+    fin >> m >> n;
+    for (int i = 1; i <= m; i++){
+        minim = 1000;
+        for (int j = 1; j <= n; j++){
+            fin >> a[i][j];
+            if (a[i][j] < minim)
+                minim = a[i][j];
+        }
+        if (minim > maxim)
+            maxim = minim;
+    }
+    fout << maxim;
+    return 0;
+}

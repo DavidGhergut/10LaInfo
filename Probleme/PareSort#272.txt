@@ -1,0 +1,34 @@
+CERINTA:
+
+Se dă un şir cu n elemente, numere naturale nenule cu cel mult 4 cifre fiecare. Afişaţi, în ordine crescătoare, valorile pare din şir. Dacă şirul nu conţine nici o valoare pară, se va afişa mesajul nu exista.
+
+SOLUTIE:
+
+#include <fstream>
+#include <algorithm>
+
+using namespace std;
+ifstream fin("paresort.in");
+ofstream fout("paresort.out");
+int main(){
+    int n, v[1001], nr = 0, x;
+    bool ok = false;
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        fin >> x;
+        if (x % 2 == 0){
+            ok = true;
+            nr++;
+            v[nr] = x;
+        }
+    }
+    sort(v + 1, v + nr + 1);
+    if (ok == false)
+        fout << "nu exista";
+    else{
+        fout << nr << '\n';
+        for (int i = 1; i <= nr; i++)
+            fout << v[i] << ' ';
+    }
+    return 0;
+}

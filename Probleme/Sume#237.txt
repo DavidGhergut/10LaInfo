@@ -1,0 +1,35 @@
+CERINTA:
+
+Se dă un şir cu n numere naturale. Să se afişeze suma primilor n termeni din şir, apoi suma primilor n-1 termeni din şir, şi aşa mai departe.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int v[105];
+int main()
+{
+    ifstream fin("sume.in");
+    ofstream fout("sume.out");
+    int n,i;
+    long long s;
+    fin>>n;
+    for (i=1;i<=n;i++)
+    {
+        fin>>v[i];
+    }
+    while (n!=0)
+    {
+        s=0;
+        for (i=1;i<=n;i++)
+        {
+            s=s+v[i];
+        }
+        fout<<s<<endl;
+        n--;
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}

@@ -1,0 +1,30 @@
+CERINTA:
+
+Se consideră tabloul bidimensional cu m linii şi n coloane şi elemente numere naturale. Să se construiască un nou tablou bidimensional cu n linii şi m coloane, obţinut din primul prin rotirea acestuia în sens trigonometric cu 90 o.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("rotire.in");
+ofstream fout("rotire.out");
+int main(){
+    int m, n, a[101][101], b[101][101];
+    fin >> m >> n;
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n; j++)
+            fin >> a[i][j];
+    }
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n; j++)
+            b[n - j + 1][i] = a[i][j];
+    }
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++)
+            fout << b[i][j] << ' ';
+        fout << '\n';
+    }
+    return 0;
+}
+

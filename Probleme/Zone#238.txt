@@ -1,0 +1,53 @@
+CERINTA:
+
+Se dă un număr natural n şi un tablou unidimensional cu 3*n elemente, numere naturale cu cel mult 4 cifre. Tabloul este împărţit în trei zone, cu câte n elemente: prima zonă conţine primele n elemente din tablou, a doua zonă conţine următoarele n elemente din tablou, restul elementelor fiind în zona a treia.
+
+Se cere interschimbarea primulul element par (dacă există) al zonei unu cu ultimul element impar (dacă există) al zonei trei. În cazul în care unul dintre elementele care urmează a fi interschimbate nu există, tabloul rămâne nemodificat.
+
+SOLUTIE:
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int v[305];
+int main()
+{
+    ifstream fin("zone.in");
+    ofstream fout("zone.out");
+    int n,i,copie,copie1,copie2,copie3,nr=0,nr1=0;
+    fin>>n;
+    for (i=1;i<=3*n;i++)
+    {
+        fin>>v[i];
+    }
+    for (i=1;i<=n;i++)
+    {
+        if (v[i]%2==0)
+        {
+            copie=v[i];
+            copie1=i;
+            nr++;
+            break;
+        }
+    }
+    for (i=3*n;i>=2*n;i--)
+    {
+        if (v[i]%2==1)
+        {
+            copie2=v[i];
+            copie3=i;
+            nr1++;
+            break;
+        }
+    }
+    if (nr!=0&&nr1!=0)
+    {
+        v[copie1]=copie2;
+        v[copie3]=copie;
+    }
+    for (i=1;i<=3*n;i++)
+        fout<<v[i]<<" ";
+    fin.close();
+    fout.close();
+    return 0;
+}

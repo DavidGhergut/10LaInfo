@@ -1,0 +1,33 @@
+CERINTA:
+
+Un tablou bidimensional cu număr impar de coloane este numit simetric faţă de coloana din mijloc dacă, pe fiecare linie a tabloului, elementele dispuse simetric faţă de elementul din mijloc al liniei respective au valori egale.
+
+Scrieţi un program care citește de la tastatură două numere naturale, m și n (n impar), și elementele unui tablou bidimensional cu m linii și n coloane, numere naturale. Programul afișează pe ecran mesajul DA, dacă tabloul este simetric față de coloana din mijloc, sau mesajul NU în caz contrar.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int m, n, a[22][22];
+    bool ok = true;
+    cin >> m >> n;
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n; j++){
+            cin >> a[i][j];
+        }
+    }
+    for (int i = 1; i <= m; i++){
+        for (int j = 1; j <= n / 2; j++){
+            if (a[i][j] != a[i][n - j + 1])
+                ok = false;
+        }
+    }
+    if (ok == true)
+        cout << "DA";
+    else
+        cout << "NU";
+    return 0;
+}
+

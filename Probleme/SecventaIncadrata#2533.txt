@@ -1,0 +1,32 @@
+CERINTA:
+
+Numim secvență încadrată a unui șir de numere naturale un subșir al acestuia, format din termeni aflați pe poziții consecutive în șirul dat, subșir care începe și se termină cu aceeași valoare. Lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+Să se determine secvențele încadrate dintr-un șir, care au lungimea maximă.
+
+SOLUTIE:
+
+#include<fstream>
+using namespace std;
+ifstream f("secventaincadrata.in");
+ofstream g("secventaincadrata.out");
+struct gg
+{
+    int pr, ult , ok=0;
+}v[10];
+int main()
+{
+    int poz=1,c;
+    while(f>>c)
+    {
+        if(v[c].ok==0) {v[c].pr=poz;v[c].ok=1;}
+        else v[c].ult=poz;
+        poz++;
+    }
+    int nr=0,ma=0;
+    for(int i=0;i<=9;++i)
+        if(v[i].ult-v[i].pr+1>ma) {ma=v[i].ult-v[i].pr+1;}
+    g<<ma<<'\n';
+    for(int i=0;i<=9;++i)
+        if(v[i].ult-v[i].pr+1==ma) g<<i<<" ";
+}
