@@ -1,0 +1,30 @@
+CERINTA:
+
+Se consideră tabloul bidimensional cu n linii şi n coloane ce conţine numere întregi cu cel mult patru cifre fiecare.
+
+Să se determine, pentru fiecare coloană, valoarea minimă de pe coloana respectivă.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("mincols.in");
+ofstream fout("mincols.out");
+int main(){
+    int n, a[51][51], minim;
+    fin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= n; j++)
+            fin >> a[i][j];
+    }
+    for (int j = 1; j <= n; j++){
+        minim = 1000;
+        for (int i = 1; i <= n; i++){
+            if (a[i][j] < minim)
+                minim = a[i][j];
+        }
+        fout << minim << ' ';
+    }
+    return 0;
+}

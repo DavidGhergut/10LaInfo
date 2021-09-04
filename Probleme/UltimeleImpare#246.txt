@@ -1,0 +1,27 @@
+CERINTA:
+
+Se dau n numere naturale. Să se determine ultimele două numere impare, nu neapărat distincte, dintre cele date.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, x, imp1, imp2;
+    cin >> n;
+    imp1 = -1;
+    imp2 = -1;
+    for (int i = 1; i <= n; i++){
+        cin >> x;
+        if (x % 2 == 1){
+            imp2 = imp1;
+            imp1 = x;
+        }
+    }
+    if (imp1 != -1 && imp2 != -1)
+        cout << imp2 << ' ' << imp1;
+    else
+        cout << "Numere insuficiente";
+    return 0;
+}

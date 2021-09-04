@@ -1,0 +1,35 @@
+CERINTA:
+
+Scrieţi un program care citeşte un tablou bidimensional cu m linii şi n coloane şi un număr k şi determină suma indicilor coloanelor care conţin valoarea k.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("exista.in");
+ofstream fout("exista.out");
+int main(){
+    int m, n, k, s = 0, nr = 0, a[11][11], ok = 0;
+    fin >> k >> n >> m;
+    for (int i = 1; i <= n; i++){
+        for (int j = 1; j <= m; j++)
+            fin >> a[i][j];
+    }
+    for (int i = 1; i <= m; i++){
+        nr = 0;
+        for (int j = 1; j <= n; j++){
+            if (a[j][i] == k)
+                nr++;
+        }
+        if (nr != 0){
+            ok++;
+            s += i;
+        }
+    }
+    if (ok == 0)
+        fout << "NU EXISTA";
+    else
+        fout << s;
+    return 0;
+}
