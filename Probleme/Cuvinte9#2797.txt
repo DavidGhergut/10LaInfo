@@ -1,0 +1,31 @@
+CERINTA:
+
+Un text are cel mult 100 de caractere și este format din cuvinte, numere naturale și spații. Cuvintele sunt formate numai din litere mici ale alfabetului englez. Cuvintele și numerele sunt separate prin câte un spaţiu.
+
+Scrieţi un program care citește de la tastatură un text de tipul menţionat mai sus și afișează pe ecran numărul din text care începe cu cea mai mare cifră. Dacă există mai multe astfel de numere, se afișează doar unul dintre acestea, iar dacă textul nu conține niciun număr, se afișează pe ecran mesajul nu exista.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    char s[105], v[10], max[10] = "000000000";
+    cin.get(s, 105);
+    char *p = strtok(s, " ");
+    while(p != NULL){
+        strcpy(v, p);
+        if(v[0] >= '0' && v[0] <= '9'){
+            if(v[0] > max[0])
+                strcpy(max, v);
+        }
+        p = strtok(NULL, " ");
+    }
+    if(max[0]!='0')
+        cout << max;
+    else
+        cout << "nu exista";
+    return 0;
+}

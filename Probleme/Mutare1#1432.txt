@@ -1,0 +1,23 @@
+CERINTA:
+
+Scrieţi definiţia completă a subprogramului C/C++ aranjare, care are doi parametri, v şi n, prin care primeşte un tablou unidimensional cu maximum 10000 de numere naturale nenule şi, respectiv, numărul de elemente din tablou. Subprogramul rearanjează elementele tabloului astfel încât toate valorile impare să se afle pe primele poziţii, iar valorile pare în continuarea celor impare. Ordinea în cadrul secvenţei de elemente pare, respectiv în cadrul secvenţei de elemente impare, poate fi oricare.
+
+SOLUTIE:
+
+void aranjare(int v[], int n){
+    int aux[10001], nr = -1;
+    for (int i = 0; i < n; i++){
+        if (v[i] % 2 == 1){
+            nr++;
+            aux[nr] = v[i];
+        }
+    }
+    for (int i = 0; i < n; i++){
+        if (v[i] % 2 == 0){
+            nr++;
+            aux[nr] = v[i];
+        }
+    }
+    for (int i = 0; i < n; i++)
+        v[i] = aux[i];
+}

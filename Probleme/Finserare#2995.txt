@@ -1,0 +1,21 @@
+CERINTA:
+
+Scrieți funcția inserare care primește ca parametru un număr natural n și furnizează prin intermediul aceluiași parametru numărul obținut din n prin inserarea, între oricare două cifre alăturate ale sale, a valorii absolute a diferenței acestora.
+
+SOLUTIE:
+
+int v[100000];
+void inserare(int &n){
+    int i = 0;
+    while(n != 0){
+        i++;
+        v[i] = n % 10;
+        n /= 10;
+    }
+    n = v[i];
+    while(i - 1 >= 1){
+        n = n * 10 + abs(v[i] - v[i - 1]);
+        n = n * 10 + v[i - 1];
+        i--;
+    }
+}

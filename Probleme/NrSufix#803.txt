@@ -1,0 +1,35 @@
+CERINTA:
+
+Fiind date două numere a şi b, îl numim pe a sufix al lui b dacă a este egal cu b sau dacă b se poate obţine din a prin alipirea la stânga a unor noi cifre.
+Exemplu: 12 este sufix al lui 12, iar 15 este sufix al lui 31415.
+
+Se dă un număr natural x și un șir de numere naturale. Să se determine ultimul număr din șir care îl care ca sufix pe x.
+
+SOLUTIE:
+
+#include <fstream>
+
+using namespace std;
+ifstream fin("nrsufix.in");
+ofstream fout("nrsufix.out");
+int main(){
+    int n, x, p = 1, copie, rez;
+    bool ok = false;
+    fin >> n;
+    copie = n;
+    while (copie > 0){
+        p *= 10;
+        copie /= 10;
+    }
+    while(fin >> x){
+        if (x == copie || x % p == n){
+            ok = true;
+            rez = x;
+        }
+    }
+    if (ok == true)
+        fout << rez;
+    else
+        fout << "nu exista";
+    return 0;
+}

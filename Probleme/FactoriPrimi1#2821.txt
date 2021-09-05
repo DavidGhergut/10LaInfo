@@ -1,0 +1,28 @@
+CERINTA:
+
+Se citește un număr natural, n (n≥2) și se cere să se scrie cel mai mic număr natural care are aceiași divizori primi ca n.
+
+SOLUTIE:
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n, div = 1, d = 2, p;
+    cin >> n;
+    while (n > 1){
+        p = 0;
+        while (n % d == 0){
+            n /= d;
+            p++;
+        }
+        if (p != 0)
+            div = div * d;
+        d++;
+        if (d * d > n)
+            d = n;
+        
+    }
+    cout << div;
+    return 0;
+}

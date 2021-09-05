@@ -1,0 +1,22 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ interval care are 2 parametri:  a, prin care primeşte un tablou unidimensional cu maximum 100 de numere naturale mai mici decât 1000 și n, numărul efectiv de elemente ale tabloului.
+
+Subprogramul returnează numărul de elemente din tablou care aparțin intervalului închis determinat de primul și ultimul element al tabloului.
+
+SOLUTIE:
+
+int interval(int a[], int n){
+    int nr = 2;
+    for (int i = 1; i < n - 1; i++){
+        if (a[n - 1] > a[0]){
+            if (a[i] >= a[0] && a[n - 1] >= a[i])
+                nr++;
+        }
+        else if (a[n - 1] < a[0]){
+            if (a[i] <= a[0] && a[n - 1] <= a[i])
+                nr++;
+        }
+    }
+    return nr;
+}

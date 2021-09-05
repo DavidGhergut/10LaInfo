@@ -1,0 +1,16 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ multiplu care are 3 parametri:  a, prin care primeşte un tablou unidimensional cu maximum 100 de numere naturale mai mici decât 1000,  n, numărul efectiv de elemente ale tabloului şi  k, un număr natural.
+
+Subprogramul returnează numărul de elemente din tablou care sunt multipli ai numărului k şi au ultima cifră egală cu k.
+
+SOLUTIE:
+
+int multiplu(int a[], int n, int k){
+    int nr = 0;
+    for (int i = 0; i < n; i++){
+        if (a[i] % k == 0 && a[i] % 10 == k)
+            nr++;
+    }
+    return nr;
+}

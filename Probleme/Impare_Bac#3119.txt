@@ -1,0 +1,25 @@
+CERINTA:
+
+Subprogramul Impare are un singur parametru, n, prin care primește un număr natural. Subprogramul înlocuiește fiecare cifră impară a lui n cu cea mai mare cifră pară strict mai mică decât ea (astfel cifra 1 se înlocuieşte cu cifra 0, cifra 3 cu cifra 2 etc.) și furnizează numărul obținut tot prin parametrul n.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+int v[15];
+void Impare(int &n){
+    int i = 0;
+    while(n != 0){
+        i++;
+        v[i] = n % 10;
+        n /= 10;
+    }
+    for (int j = 1; j <= i; j++){
+        if (v[j] % 2 == 1)
+            v[j]--;
+    }
+    while(i >= 1){
+        n = n * 10 + v[i];
+        i--;
+    }
+}
