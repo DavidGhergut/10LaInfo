@@ -1,0 +1,20 @@
+CERINTA:
+
+Subprogramul DivImpar are doi parametri, a și b, prin care primește două numere naturale din intervalul [1,105]. Subprogramul returnează cel mai mare divizor comun impar al numerelor a și b.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+int DivImpar(int a, int b){
+    while(a!=b)
+    {
+        if(a>b)
+            a=a-b;
+        else
+            b=b-a;
+    }
+    while (a % 2 == 0)
+        a/=2;
+    return a;
+}

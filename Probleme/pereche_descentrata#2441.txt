@@ -1,0 +1,43 @@
+CERINTA:
+
+O pereche de cuvinte, unul cu număr par de litere, iar celălalt cu număr impar de litere, se numește descentrată dacă se poate obține cuvântul cu număr par de litere din celălalt, prin duplicarea caracterului din mijlocul acestuia.
+
+Exemplu: 
+perechile crezi și creezi, respectiv a și aa sunt descentrate.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int main(){
+    int k = 0, ok = 0, i, j, l, ok1, r;
+    char s[101], a[101][101];
+    cin.get(s, 101);
+    char *p = strtok(s, " ");
+    while(p != NULL){
+        k++;
+        strcpy(a[k], p);
+        p=strtok(NULL, " ");
+    }
+    for(i = 1; i <= k && ok == 0; i++){
+        for(j = 1; j <= k && ok == 0; j++){
+            if(i != j && strlen(a[i]) % 2 == 1 && strlen(a[j]) % 2 == 0){
+                l = strlen(a[i]);
+                ok1 = 1;
+                for(r = 0; r <= l / 2 && ok1; r++){
+                    if(a[i][r] != a[j][r] || (a[i][r + l / 2 + 1] != a[j][r + l / 2 + 2] && a[i][r + l / 2 + 1] != 0 && a[j][r + l / 2 + 2] != 0))
+                        ok1 = 0;
+                }
+                if(ok1 == 1 && a[i][l / 2] == a[j][l / 2 + 1])
+                    ok = 1;
+            }
+        }
+    }
+    if(ok == 1)
+        cout << "DA";
+    else
+        cout << "NU";
+    return 0;
+}

@@ -1,0 +1,33 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ zero care are 2 parametri: n – prin care primește un număr natural și v, prin care primeşte un tablou unidimensional cu 2•n elemente, numere întregi cu cel mult 4 cifre. Numărul de elemente pare este egal cu numărul de elemente impare. Elementele au indici de la 1 la 2•n.
+
+Subprogramul modifică tabloul astfel încât elementele impare să aibă indici impari, iar elementele pare să aibă indici pari. Tabloul modificat este furnizat tot prin parametrul v.
+
+SOLUTIE:
+
+void zero(int n, int v[105]){
+    int par[55], ipar = 0, impar[55], iimpar = 0;
+    for (int i = 1; i <= 2 * n; i++){
+        if (v[i] % 2 == 0){
+            par[ipar] = v[i];
+            ipar++;
+        }
+        else{
+            impar[iimpar] = v[i];
+            iimpar++;
+        }
+    }
+    iimpar = 0;
+    ipar = 0;
+    for (int i = 1; i <= 2 * n; i++){
+        if (i % 2 == 1){
+             v[i] = impar[iimpar];
+             iimpar++;
+        }
+        else{
+            v[i] = par[ipar];
+            ipar++;
+        }
+    }
+}

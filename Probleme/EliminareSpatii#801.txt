@@ -1,0 +1,23 @@
+CERINTA:
+
+Se dă un şir de caractere ce conţine cuvinte formate din litere mici ale alfabetului englez, separate prin unul sau mai multe spații.
+
+Să se afişeze şirul obţinut după eliminarea din șir unor spații, astfel încât între cuvinte să fie un singur spațiu și să nu nu existe spații înainte de primul cuvânt și nici după ultimul.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+char sir[260];
+int main()
+{
+    cin.get(sir, 260);
+    char *p = strtok(sir, " ");
+    while(p != NULL){
+        cout << p << " ";
+        p = strtok(NULL, " ");
+    }
+    return 0;
+}

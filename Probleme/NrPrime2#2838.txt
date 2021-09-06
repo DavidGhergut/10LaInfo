@@ -1,0 +1,17 @@
+CERINTA:
+
+Subprogramul NrPrime are un singur parametru, n, prin care primeşte un număr natural (n∈[0,109]). Subprogramul returnează numărul de cifre prime ale lui n.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+int NrPrime(long long n){
+    int nr = 0;
+    while (n > 0){
+        if (n % 10 == 2 || n % 10 == 3 || n % 10 == 5 || n % 10 == 7)
+            nr++;
+        n /= 10;
+    }
+    return nr;
+}

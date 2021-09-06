@@ -1,0 +1,25 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ sub care are 3 parametri: n – prin care primește un număr natural, v, prin care primeşte un tablou unidimensional cu n elemente, numere naturale cu cel mult 4 cifre și k, prin care primeşte un număr natural.
+
+Subprogramul returnează suma primelor k elemente cu valoare impară ale tabloului. Dacă nu există k elemente impare în tablou, subprogramul returnează valoarea -1.
+
+SOLUTIE:
+
+int sub(int n, int v[], int k){
+    int nr = 0, s = 0;
+    bool ok = false;
+    for (int i = 0; i < n; i++){
+        if (v[i] % 2 == 1){
+            nr++;
+            s += v[i];
+            if (nr == k){
+                ok = true;
+                break;
+            }
+        }
+    }
+    if (ok == true)
+        return s;
+    return -1;
+}

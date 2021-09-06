@@ -1,0 +1,25 @@
+CERINTA:
+
+Un număr natural este numit echilibrat dacă suma cifrelor sale de pe poziții pare este un număr par, iar suma cifrelor sale de pe poziții impare este un număr impar. Pozițiile cifrelor sunt numerotate de la dreapta la stânga, astfel: cifra unităților este pe poziția 0, cifra zecilor este pe poziția 1 ș.a.m.d.
+
+Subprogramul echilibrat are un singur parametru, n, prin care primește un număr natural (n∈[10,109]). Subprogramul returnează valoarea 1 dacă n este echilibrat sau valoarea 0 în caz contrar.
+
+Scrieți definiţia completă a subprogramului.
+
+SOLUTIE:
+
+int echilibrat(int n){
+    int suma_poz_pare = 0, suma_poz_impare = 0, i = 0;
+    while (n > 0){
+        if (i % 2 == 0)
+            suma_poz_pare = suma_poz_pare + n % 10;
+        else
+            suma_poz_impare = suma_poz_impare + n % 10;
+        i++;
+        n = n / 10;
+    }
+    if (suma_poz_pare % 2 == 0 && suma_poz_impare % 2 == 1)
+        return 1;
+    else
+        return 0;
+}

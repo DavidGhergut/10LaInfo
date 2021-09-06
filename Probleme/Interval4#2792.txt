@@ -1,0 +1,29 @@
+CERINTA:
+
+Subprogramul interval are un singur parametru, n, prin care primește un număr natural (n∈ [3,106]). Subprogramul returnează cel mai mic număr natural x (n<x) care NU este prim, cu proprietatea că în intervalul [n,x] există un singur număr prim.
+
+Scrieţi definiţia completă a subprogramului.
+
+SOLUTIE:
+
+bool Este_Prim(int n){
+    if (n == 2)
+        return true;
+    else{
+        for (int d = 2; d * d <= n; d++){
+            if (n % d == 0)
+                return false;
+        }
+    }
+    return true;
+}
+int interval(int n){
+    bool ok = false;
+    int elem = n;
+    while (true){
+        if (Este_Prim(elem) == true)
+            return elem + 1;
+        elem++;
+    }
+    return elem;
+}

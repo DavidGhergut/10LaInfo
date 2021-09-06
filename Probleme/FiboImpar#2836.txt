@@ -1,0 +1,27 @@
+CERINTA:
+
+Șirul lui Fibonacci (1, 1, 2, 3, 5, 8, 13, 21,...) se definește astfel:
+
+f1=1, f2=1, fi=fi−1+fi−2 pentru orice număr natural i, i≥3.
+
+Subprogramul Fibo are un singur parametru, n, prin care primeşte un număr natural (n∈[1,30]). Subprogramul returnează al n-lea termen impar al șirului lui Fibonacci.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+long long f[10005];
+int Fibo(int n){
+    int nr = 0, i = 3;
+    f[1] = 1;
+    n--;
+    f[2] = 1;
+    n--;
+    while(n > 0){
+        f[i] = f[i - 2] + f[i - 1];
+        if (f[i] % 2 == 1)
+            n--;
+        i++;
+    }
+    return f[i - 1];
+}

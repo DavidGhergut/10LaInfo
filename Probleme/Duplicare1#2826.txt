@@ -1,0 +1,31 @@
+CERINTA:
+
+Subprogramul duplicare are doi parametri, în această ordine:
+
+n, prin care primește un număr natural (n∈[1,104]);
+d, prin care furnizează numărul obţinut prin duplicarea fiecărei cifre pare a lui n sau -1 dacă acesta nu are nicio cifră pară.
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+void duplicare(int n, int &d){
+    int a[20], p = 1;
+    int cn = n;
+    while (n > 0){
+        a[p] = n % 10;
+        n /= 10;
+        p++;
+    }
+    p--;
+    d = 0;
+    for (int i = p; i >= 1; i--){
+        if (a[i] % 2 == 0){
+            d = d * 10 + a[i];
+            d = d * 10 + a[i];
+        }
+        else
+            d = d * 10 + a[i];
+    }
+    if (d == cn)
+        d = -1;
+}

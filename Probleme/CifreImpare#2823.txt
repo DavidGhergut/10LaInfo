@@ -1,0 +1,26 @@
+CERINTA:
+
+Subprogramul cifreImpare are un singur parametru, n, prin care primește un număr natural cu toate cifrele nenule (n∈[1,109]). Subprogramul returnează numărul obținut prin eliminarea tuturor cifrelor impare din n, respectiv -1 dacă nu există astfel de cifre sau dacă toate cifrele lui n sunt impare.
+
+Scrieți definiţia completă a subprogramului.
+
+SOLUTIE:
+
+int cifreImpare(int n){
+    int copie = n, o = 0, numar_cautat = 0, nr = 0, nr_impar = 0;
+    while (copie > 0){
+        o = o * 10 + copie % 10;
+        nr++;
+        copie = copie / 10;
+    }
+    while (o > 0){
+        if ((o % 10) % 2 == 0)
+            numar_cautat = numar_cautat * 10 + o % 10;
+        else
+            nr_impar++;
+        o /= 10;
+    }
+    if (nr_impar == nr || nr_impar == 0)
+        return -1;
+    return numar_cautat;
+}

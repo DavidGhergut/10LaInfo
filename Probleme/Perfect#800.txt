@@ -1,0 +1,24 @@
+CERINTA:
+
+Un număr natural nenul se numește perfect dacă este egal cu suma divizorilor săi naturali strict mai mici decât el.
+Exemplu: 28 este număr perfect pentru că 28=1+2+4+7+14.
+
+SOLUTIE:
+
+void perfect(int a, int b){
+    int s;
+    bool ok = false;
+    for (int i = b; i >= a; i--){
+        s = 0;
+        for (int d = 1; d <= i / 2; d++){
+            if (i % d == 0)
+                s += d;
+        }
+        if (s == i){
+            ok = true;
+            cout << i << ' ';
+        }
+    }
+    if (ok == false)
+        cout << "nu exista";
+}

@@ -1,0 +1,26 @@
+CERINTA:
+
+Se dă un şir de caractere ce conţine cuvinte formate din litere mici ale alfabetului englez, separate prin unul sau mai multe spații. Înaintea primului cuvânt nu există spații, și nici după ultimul. Să se determine numărul de cuvinte din șir în care apare litera a.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[75];
+    cin.get(s, 75);
+    char sep[]=" .,";
+    char * p = strtok(s , sep);
+    int t = 0;
+    while(p != NULL){
+        if (strchr(p, 'a') != NULL)
+            t++;
+        p = strtok(NULL , sep);
+    }
+    cout << t;
+    return 0;
+}

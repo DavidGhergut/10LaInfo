@@ -1,0 +1,24 @@
+CERINTA:
+
+Scrieți definiția completă a subprogramului numar, care primește prin intermediul parametrului n un număr natural nenul (1≤n≤100), iar prin intermediul parametrului a, un tablou unidimensional care conţine n valori naturale.
+
+Subprogramul furnizează prin parametrul k o valoare naturală egală cu numărul obţinut prin concatenarea valorii maxime cu valoarea minimă din tablou.
+
+SOLUTIE:
+
+void numar (int n, int a[], int &k){
+    k = a[0];
+    int minim = a[0];
+    for (int i = 1; i < n; i++){
+        if (a[i] < minim)
+            minim = a[i];
+        else if (a[i] > k)
+            k = a[i];
+    }
+    int copie = minim, p = 1;
+    while (copie > 0){
+        p *= 10;
+        copie /= 10;
+    }
+    k = k * p + minim;
+}

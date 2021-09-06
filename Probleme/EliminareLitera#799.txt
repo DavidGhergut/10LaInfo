@@ -1,0 +1,37 @@
+CERINTA:
+
+Să se scrie un program care citește un șir de caractere în care cuvintele sunt formate numai din litere mici ale alfabetului englez și sunt separate prin câte un spațiu și elimină litera din mijloc a fiecărui cuvânt cu număr impar de litere (cel puțin trei).
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+char sir[260], copie[260], cuvinte[260][260];
+int main()
+{
+    cin.get(sir, 260);
+    char *p = strtok(sir, " ");
+    int t = 0;
+    int nr, ok = 1;
+    while(p != NULL){
+        nr = strlen(p);
+        if (strlen(p) % 2 == 1 && strlen(p) >= 3){
+            strcpy(copie , p + strlen(p) / 2 + 1);
+            strcpy(p + strlen(p) / 2 , copie);
+        }
+        strcpy(cuvinte[t], p);
+        t++;
+        if (nr != strlen(p))
+            ok = 0;
+        p = strtok(NULL, " ");
+    }
+    if (ok == 1)
+        cout << "nu exista";
+    else{
+        for (int i = 0; i < t; i++)
+            cout << cuvinte[i] << " ";
+    }
+    return 0;
+}

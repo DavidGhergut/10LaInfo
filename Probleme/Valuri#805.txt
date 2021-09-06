@@ -1,0 +1,16 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ valuri care are 2 parametri: n – prin care primește un număr natural, v, prin care furnizează un tablou unidimensional cu 2*n elemente, valori naturale distincte din intervalul [1,2*n].
+
+Subprogramul construieşte tabloul v astfel încât, în acesta, şirul elementelor impare să fie strict crescător, iar şirul elementelor pare să fie strict descrescător. Primul element al tabloului este impar, iar două elemente cu aceeaşi paritate nu pot ocupa poziţii consecutive în tablou.
+
+SOLUTIE:
+
+void valuri(int n, int v[55]){
+    for(int i = 0; i < 2 * n; i++){
+        if(i % 2 == 1)
+            v[i] = 2 * n - i + 1;
+        else
+            v[i] = i + 1;
+    }
+}

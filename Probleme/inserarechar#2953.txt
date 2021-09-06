@@ -1,0 +1,48 @@
+CERINTA:
+
+Scrieți un program care citește un cuvânt cu cel mult 15 litere mici ale alfabetului englez și apoi un text cu cel mult 255 de caractere (cuvinte formate din litere mici ale alfabetului englez separate prin unul sau mai multe spații) și care afișează șirul obținut prin inserarea în text a caracterului ? după fiecare apariție a cuvântului citit. Dacă în text nu apare cuvântul citit, se va afișa mesajul NU APARE.
+
+SOLUTIE:
+
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+ifstream fin("inserarechar.in");
+ofstream fout("inserarechar.out");
+int main(){
+    char x[20], v[260], copie[260];
+    fin.get(x, 20);
+    fin.get();
+    fin.get(v, 260);
+    for (int i = 0; i <= strlen(v); i++)
+        copie[i] = v[i];
+    int ok = 0;
+    char sepi[] = " ";
+    char * nr = strtok(x, sepi);
+    char * t = strtok(v , sepi);
+    while(t != NULL){
+        if (strcmp(nr, t) == 0){
+            ok = 1;
+            break;
+        }
+        t = strtok(NULL , sepi);
+    }
+    if (ok == 1){
+        char sep[] = " ";
+        char * p = strtok(copie , sep);
+        while(p != NULL){
+            if (strcmp(nr, p) == 0)
+                fout << p << '?' << " ";
+                //fout << strstr(p, x) << '\n';
+            else
+                fout << p << " ";
+            p = strtok(NULL , sep);
+        }
+    }
+    else
+        fout << "NU APARE";
+    fin.close();
+    fout.close();
+    return 0;
+}

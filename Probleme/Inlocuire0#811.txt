@@ -1,0 +1,15 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ num care are 2 parametri: n – prin care primește un număr natural și v, prin care primeşte un tablou unidimensional cu n elemente, numere întregi cu cel mult 4 cifre.
+
+Subprogramul înlocuieşte cu 0 fiecare valoare mai mică sau egală cu prima valoare din tablou. Tabloul modificat este furnizat tot prin parametrul v.
+
+SOLUTIE:
+
+void num(int n, int v[55]){
+    for(int i = 1; i < n; i++){
+        if(v[i] <= v[0])
+            v[i] = 0;
+    }
+    v[0] = 0;
+}

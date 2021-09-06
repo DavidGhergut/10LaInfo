@@ -1,0 +1,19 @@
+CERINTA:
+
+Subprogramul multiplu are un singur parametru, n, prin care primește un număr natural (n∈[1,104]). Subprogramul returnează cel mai mic multiplu nenul al lui n cu proprietatea că este pătrat perfect.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+#include <cmath>
+
+int multiplu(int n){
+    int nr = 1, rez;
+    while (true){
+        rez = nr * n;
+        if (int(sqrt(rez)) * int(sqrt(rez)) == rez)
+            return rez;
+        nr++;
+    }
+}

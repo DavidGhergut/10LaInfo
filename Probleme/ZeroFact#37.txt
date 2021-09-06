@@ -1,0 +1,14 @@
+CERINTA:
+
+Scrieți definiția completă a unui subprogram C++, nz, cu un parametru întreg n, care returnează numărul zerourilor de la sfârşitul numărului n!
+
+SOLUTIE:
+
+int nz(int n){
+    int s = 0, putere = 5;
+    while(putere <= n){
+        s += n / putere;
+        putere *= 5;
+    }
+    return s;
+}

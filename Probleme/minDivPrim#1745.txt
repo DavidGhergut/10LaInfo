@@ -1,0 +1,20 @@
+CERINTA:
+
+Subprogramul minDivPrim are un singur parametru, n, prin care primeşte un număr
+natural. Subprogramul returnează cel mai mic număr natural care are aceiași divizori primi ca n.
+
+Scrieţi definiţia completă a subprogramului.
+
+SOLUTIE:
+
+int minDivPrim(int n){
+    int d, numarul_cautat = 1;
+    for(d = 2; d * d <= n; d++){
+        if(n % d == 0){
+            numarul_cautat = numarul_cautat * d;
+            while(n % d == 0)
+                n = n / d;
+        }
+    }
+    return numarul_cautat * n;
+}

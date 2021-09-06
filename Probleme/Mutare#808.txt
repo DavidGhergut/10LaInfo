@@ -1,0 +1,25 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ sub care are 3 parametri: n – prin care primește un număr natural, v, prin care primeşte un tablou unidimensional cu n elemente, numere naturale cu cel mult 4 cifre și x, prin care primeşte un număr natural. Cel puțin un element al tabloului v are valoarea x.
+
+Subprogramul modifică ordinea valorilor din tablou, astfel încât toate valorile egale cu x să ocupe primele poziţii din v, iar celelalte valori să se regăsească în continuarea acestora, în ordinea inițială. Tabloul modificat este furnizat tot prin parametrul v.
+
+SOLUTIE:
+
+void sub(int n, int v[51], int x){
+    int rez[51], nr = -1;
+    for (int i = 0; i < n; i++){
+        if (v[i] == x){
+            nr++;
+            rez[nr] = x;
+        }
+    }
+    for (int i = 0; i < n; i++){
+        if (v[i] != x){
+            nr++;
+            rez[nr] = v[i];
+        }
+    }
+    for (int i = 0; i < n; i++)
+        v[i] = rez[i];
+}

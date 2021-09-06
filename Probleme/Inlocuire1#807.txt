@@ -1,0 +1,25 @@
+CERINTA:
+
+Se dă un şir de caractere ce conţine cuvinte formate din litere mici ale alfabetului englez, separate prin unul sau mai multe spații. Înaintea primului cuvânt nu există spații, și nici după ultimul. Să se modifice șirul dat, astfel încât să se înlocuiască fiecare cuvânt cu exact trei litere din șir cu simbolul *.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+char s[260];
+int main()
+{
+    cin.get(s, 260);
+    char sep[]=" ";
+    char * p = strtok(s , sep);
+    while(p != NULL){
+        if (strlen(p) == 3)
+            cout << "*" << " ";
+        else
+            cout << p << " ";
+        p = strtok(NULL , sep);
+    }
+    return 0;
+}

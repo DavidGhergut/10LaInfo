@@ -1,0 +1,19 @@
+CERINTA:
+
+Scrieți definiția completă a unui subprogram C++ nr_prim care primește prin singurul său parametru, n, un număr natural cu cel mult 9 cifre și returnează cel mai mic număr prim, strict mai mare decât n.
+
+SOLUTIE:
+
+bool Este_Prim(int n){
+    for (int d = 2; d  * d <= n; d++){
+        if (n % d == 0)
+            return false;
+    }
+    return true;
+}
+int nr_prim(int n){
+    n++;
+    while(Este_Prim(n) == false)
+        n++;
+    return n;
+}
