@@ -1,0 +1,20 @@
+CERINTA:
+
+Scrieți definiția completă a subprogramului F, care primește prin intermediul parametrului n un număr natural nenul (1≤n≤9), iar prin intermediul parametrului a, un tablou unidimensional care conţine n valori naturale, fiecare dintre acestea reprezentând câte o cifră a unui număr. Astfel,  a0 reprezintă prima cifră a numărului, a1 a doua cifră, etc.
+
+Subprogramul furnizează prin parametrul k o valoare naturală egală cu numărul obţinut din cifrele pare memorate în tabloul a sau valoarea -1 dacă în tablou nu există nicio cifră pară.
+
+SOLUTIE:
+
+void F(int n, int a[], int &k){
+	bool ok = false;
+    k = 0;
+    for (int i = 0; i < n; i++){
+        if (a[i] % 2 == 0){
+            ok = true;
+        	k = k * 10 + a[i];
+        }
+    }
+    if (ok == false)
+        k = -1;
+}

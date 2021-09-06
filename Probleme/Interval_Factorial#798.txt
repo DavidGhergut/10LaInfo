@@ -1,0 +1,17 @@
+CERINTA:
+
+Un interval cu proprietatea că există un singur număr natural, n (2≤n), pentru care valoarea produsului 1·2·3·...·n aparține acestui interval este numit interval factorial al lui n.
+Exemplu: [5,8] și [3,23] sunt intervale factoriale ale lui 3, dar [1,15] și [7,10] nu sunt intervale factoriale ale niciunui număr.
+
+SOLUTIE:
+
+void interval(int n, int &liminf, int &limsup){
+    long long x = 1;
+    long long cn = n;
+    while (n != 0){
+        x = x * n;
+        n--;
+    }
+    liminf = x / cn + 1;
+    limsup = x * (cn + 1) - 1;
+}

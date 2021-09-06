@@ -1,0 +1,19 @@
+CERINTA:
+
+Subprogramul duplicare are un singur parametru, n, prin care primește un număr natural (n∈[1,104)). Subprogramul furnizează, prin același parametru, numărul obținut din n prin inserarea, după fiecare cifră pară din scrierea lui, a unei cifre egale cu jumătate din aceasta.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+void duplicare(int &n){
+    int copie = n, p = 1;
+    while(copie > 0){
+        if((copie % 10) % 2 == 0){
+            n = ((n / p) * p) * 10 + ((copie % 10) / 2) * p + n % p;
+            p *= 10;
+        }
+        copie /= 10;
+        p *= 10;
+    }
+}

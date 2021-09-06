@@ -1,0 +1,22 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului  sterge, care primeşte prin cei 4 parametri
+v, n, i, j:
+
+v, un tablou unidimensional cu maximum 100 de elemente întregi din intervalul [-1000,1000]
+n, un număr natural reprezentând numărul de elemente din tabloul v
+i și j două valori naturale cu 1≤i≤j≤n
+Subprogramul elimină din tabloul v elementele v[i], v[i+1], … , v[j] actualizând valoarea parametrului n.
+
+Tabloul modificat este furnizat tot prin parametrul v.
+
+SOLUTIE:
+
+int sterge(int v[], int &n, int i, int j){
+    int nr = i;
+    for (int i = j + 1; i <= n; i++){
+        v[nr] = v[i];
+        nr++;
+    }
+    n = n - j + i - 1; 
+}

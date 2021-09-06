@@ -1,0 +1,30 @@
+CERINTA:
+
+Scrieţi definiția completă a unui subprogram C++ i_prim care primește prin singurul său parametru, n, un număr natural cu cel mult 9 cifre și returnează diferența minimă p2-p1 în care p1 şi p2 sunt numere prime și p1≤n≤p2.
+
+SOLUTIE:
+
+int i_prim(int n){
+    int p1 = 0, p2 = 0, numardr = n, numarst = n, nr;
+    while (p1 == 0){
+        nr = 0;
+        for (int d = 2; d * d <= numarst; d++){
+            if (numarst % d == 0)
+                nr++;
+        }
+        if (nr == 0)
+            p1 = numarst;
+        numarst--;
+    }
+    while (p2 == 0){
+        nr = 0;
+        for (int d = 2; d * d <= numardr; d++){
+            if (numardr % d == 0)
+                nr++;
+        }
+        if (nr == 0)
+            p2 = numardr;
+        numardr++;
+    }
+    return p2 - p1;
+}

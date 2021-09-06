@@ -1,0 +1,26 @@
+CERINTA:
+
+Se dă un şir format din cel mult 100 de caractere – litere mici ale alfabetului englez şi spaţii. Să se modifice acest şir prin dublarea fiecărei vocale.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int Este_Vocala(char a){
+    if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' || a == 'A' || a == 'E' || a == 'I' || a == 'O' || a == 'U')
+        return 1;
+    return 0;
+}
+int main()
+{
+    char s[105];
+    cin.get(s, 105);
+    for(int i = 0; i < strlen(s); i++){
+        cout << s[i];
+        if (Este_Vocala(s[i]) == 1)
+            cout << s[i];
+    }
+    return 0;
+}

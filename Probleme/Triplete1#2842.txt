@@ -1,0 +1,19 @@
+SOLUTIE:
+
+Se consideră subprogramul triplete, cu un singur parametru, n, prin care primeşte o valoare naturală din intervalul [2,104]. Subprogramul afișează pe ecran toate tripletele de numere naturale (x,y,z) cu proprietatea că x<y<z și x·y+y·z=n. Fiecare triplet se afișează pe câte o linie a ecranului, iar numerele din fiecare triplet sunt separate prin câte o virgulă și încadrate între paranteze rotunde.
+
+Scrieți definiţia completă a subprogramului.
+
+CERINTA:
+
+void triplete(int n){
+    for(int x = 0; x <= n / 3; x++){
+        for(int y = x + 1 ; y <= 2 * n / 3 ; y ++){
+            if((n - x * y) % y == 0){
+                int z = (n - x * y) / y;
+                if(y < z)
+                    cout << "(" << x << "," << y << "," << z << ")" << '\n';
+            }
+        }
+    }
+}

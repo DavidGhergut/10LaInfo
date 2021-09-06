@@ -1,0 +1,18 @@
+CERINTA:
+
+Scrieți definiția completă a subprogramului P care primeşte prin intermediul parametrului n un număr natural nenul (n≤100), iar prin intermediul parametrului  x un tablou unidimensional cu  n componente întregi, de maximum opt cifre fiecare.
+
+Subprogramul furnizează prin intermediul parametrului  mini valoarea minimă din tabloul x, prin intermediul parametrului maxi valoarea maximă din x, iar prin intermediul parametrului sum suma elementelor din tabloul x.
+
+SOLUTIE:
+
+void P(int x[], int n, int &mini, int &maxi, int &sum){
+    mini = x[0], maxi = x[0], sum = x[0];
+    for (int i = 1; i < n; i++){
+        if (mini > x[i])
+            mini = x[i];
+        else if (maxi < x[i])
+            maxi = x[i];
+        sum += x[i];
+    }
+}

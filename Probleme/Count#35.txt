@@ -1,0 +1,20 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului C++ count care are 2 parametri:  a, prin care primeşte un tablou unidimensional cu maximum 100 de numere reale mai mici decât 1000 și n, numărul efectiv de elemente ale tabloului.
+
+Subprogramul returnează numărul de elemente din tablou care sunt mai mari sau cel puțin egale cu media aritmetică a tuturor elementelor din tablou.
+
+SOLUTIE:
+
+int count(double a[], int n){
+    int nr = 0;
+    double s = 0, medie;
+    for (int i = 0; i < n; i++)
+        s += a[i];
+    medie = s / n;
+    for (int i = 0; i < n; i++){
+        if (a[i] >= medie)
+            nr++;
+    }
+    return nr;
+}

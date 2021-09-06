@@ -1,0 +1,20 @@
+CERINTA:
+
+Subprogramul produs are doi parametri, în această ordine:
+
+a, prin care primește un număr natural (a∈[1,106]);
+k, prin care furnizează cea mai mare valoare naturală impară cu proprietatea că produsul tuturor numerelor impare din intervalul [1,k] este mai mic sau egal cu a.
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+int produs(long a, int &k){
+    int p = 1;
+    k = 3;
+    while(p <= a){
+        p *= k;
+        k += 2;
+    }
+    k = k - 4;
+    return k;
+}

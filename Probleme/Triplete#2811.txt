@@ -1,0 +1,24 @@
+CERINTA:
+
+Subprogramul triplete are trei parametri, a, b și c, în această ordine, prin care primește câte un număr natural din intervalul [0,104] (a<b). Subprogramul afișează pe ecran în ordine lexicografică toate tripletele de numere naturale, x, y și z, soluții ale ecuației x+y+z=c, cu proprietatea că a≤ x≤ y≤ z≤ b.
+
+Fiecare triplet afișat pe câte o linie și este încadrat între acolade, iar numerele x, y și z sunt afișate în această ordine, separate prin câte o virgulă. Dacă nu există niciun triplet cu proprietatea cerută, se afişează mesajul nu exista.
+
+Scrieți definiția completă a subprogramului.
+
+SOLUTIE:
+
+void triplete(int a, int b , int c){
+    int ok = 0;
+    for(int i = a ; i <= b ; i ++){
+        for(int j = i; j <= b && i + j * 2 <= c; j++){
+            int k = c - i - j;
+            if(j <= k && k <= b){
+                cout << "{" << i << "," << j << "," << k << "}" << '\n';
+                ok = 1;
+            }
+        }
+    }
+    if(ok != 1)
+        cout << "nu exista" << '\n';
+}

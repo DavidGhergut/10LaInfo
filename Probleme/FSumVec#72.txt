@@ -1,0 +1,20 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului  suma, care primeşte prin cei 4 parametri
+v, n, i, j:
+
+v, un tablou unidimensional cu maximum 100 de elemente întregi din intervalul [-1000,1000]
+n, un număr natural reprezentând numărul de elemente din tabloul v
+i și j două valori naturale cu 1≤i≤j≤n
+Subprogramul returnează suma elementelor v[1], v[2], … , v[i-1], v[j+1], … , v[n].
+
+SOLUTIE:
+
+int suma(int v[], int n, int i, int j){
+    int suma = 0;
+    for (int k = 1; k <= i - 1; k++)
+        suma += v[k];
+    for (int k = j + 1; k <= n; k++)
+        suma += v[k];
+    return suma;
+}

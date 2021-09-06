@@ -1,0 +1,41 @@
+CERINTA:
+
+Se consideră un cuvânt format din cel puțin două și cel mult 100 de caractere, numai litere mici ale alfabetului englez.
+
+Scrieţi un program care citeşte de la tastatură un cuvânt de tipul precizat și afișează pe ecran mesajul DA în cazul în care cuvântul conține doar consoane şi, eventual, vocala i, sau mesajul NU în caz contrar.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int Este_Consoana(int c){
+    if (c == 'a' || c == 'e' || c == 'o' || c == 'u')
+        return false;
+    else if (c == 'i')
+        return 2;
+    return true;
+}
+int main()
+{
+    char cuvant[105];
+    cin.get(cuvant, 105);
+    int nr_consoane = 0, nr_vocala_i = 0;
+    for (int i = 0; i < strlen(cuvant); i++){
+        if (Este_Consoana(cuvant[i]) == 2)
+            nr_vocala_i++;
+        else if (Este_Consoana(cuvant[i]) == true)
+            nr_consoane++;
+    }
+    if (nr_vocala_i == strlen(cuvant))
+        cout << "NU";
+    else{
+        nr_consoane += nr_vocala_i;
+        if (nr_consoane == strlen(cuvant))
+            cout << "DA";
+        else
+            cout << "NU";
+    }
+    return 0;
+}

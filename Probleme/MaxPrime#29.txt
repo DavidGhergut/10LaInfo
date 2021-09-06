@@ -1,0 +1,26 @@
+CERINTA:
+
+Să se scrie o funcție C++ care, pentru un număr natural n transmis ca parametru, determină și întoarce prin intermediul unor parametri de ieșire cele mai mari două numere naturale prime mai mici decât n.
+
+SOLUTIE:
+void sub(int n, int &a, int &b){
+    bool ok;
+    int nr = 1;
+    for (int i = n - 1; i >= 2; i--){
+        ok = true;
+        for (int d = 2; d * d <= i; d++){
+            if (i % d == 0){
+                ok = false;
+                break;
+            }
+        }
+        if (ok == true && nr == 1){
+            nr++;
+            a = i;
+        }
+        else if (ok == true && nr == 2 && i < a){
+            b = i;
+            break;
+        }
+    }
+}

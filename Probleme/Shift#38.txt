@@ -1,0 +1,14 @@
+CERINTA:
+
+Scrieţi definiția completă a subprogramului shift care primește prin intermediul parametrului n o valoare naturală nenulă (n≤100), iar prin intermediul parametrului x, un tablou unidimensional cu n componente. Fiecare componentă a acestui tablou este un număr întreg care are cel mult 8 cifre.
+
+Subprogramul permută circular cu o poziţie spre stânga primele n elemente ale tabloului x și furnizează tabloul modificat tot prin parametrul x.
+
+SOLUTIE:
+
+void shift(int x[], int n){
+    int aux = x[0];
+    for (int i = 1; i < n; i++)
+    	x[i - 1] = x[i];
+    x[n - 1] = aux;
+}

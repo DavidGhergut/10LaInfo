@@ -1,0 +1,34 @@
+CERINTA:
+
+Scrieţi un program care citeşte de la tastatură, în această ordine, un număr natural n, apoi n cuvinte, separate prin Enter, urmate de un număr natural k. Numerele citite sunt din intervalul [1,20], iar fiecare cuvânt este format din cel mult 20 de caractere, numai litere mici ale alfabetului englez. Cel puţin unul dintre cuvinte are k litere.
+
+Programul construiește în memorie, apoi afișează pe ecran, un șir care să cuprindă cuvintele citite, separate prin câte un spațiu, astfel încât toate cele care au k litere să ocupe primele poziţii, iar celelalte să se regăsească în continuarea acestora, într-o ordine oarecare.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char v[25][25];
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        cin >> v[i];
+    }
+    int k;
+    cin >> k;
+    for (int i = 1; i <= n; i++){
+        if (strlen(v[i]) == k)
+            //cout << v[i] << " " << strlen(v[i]) << '\n';
+            cout << v[i] << " ";
+    }
+    for (int i = 1; i <= n; i++){
+        if (strlen(v[i]) != k)
+            cout << v[i] << " ";
+    }
+    return 0;
+}

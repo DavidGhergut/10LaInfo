@@ -1,0 +1,34 @@
+CERINTA:
+
+Definiți funcția
+
+void FRadical(int n, int &x, int &y)
+
+cu parametrii:
+n, prin care primește un număr natural din intervalul [1, 1.000.000.000]
+x și y – două numere naturale care se determină, cu proprietatea că x2 * y = n, iar x este maxim posibil
+
+SOLUTIE:
+
+void FRadical(int n, int &x, int &y){
+    x = 1;
+    y = 1;
+    int frecv;
+    bool ok = false;
+    for (int d = 2; d * d <= n; d++){
+        frecv = 0;
+        while (n % d == 0){
+            ok = true;
+            frecv++;
+            n /= d;
+        }
+        for (int i = 1; i <= frecv / 2; i++)
+            x *= d;
+        if (frecv % 2 == 1)
+            y *= d;
+    }
+    if (ok == false)
+        y = n;
+    else
+        y *= n;
+}

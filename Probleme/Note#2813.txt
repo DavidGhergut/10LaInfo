@@ -1,0 +1,26 @@
+CERINTA:
+
+Se consideră un text cu cel mult 100 de caractere, în care cuvintele sunt formate din litere mari ale alfabetului englez și sunt separate prin câte un spațiu.
+
+Scrieți un program care citește de la tastatură un text de tipul menționat mai sus și afișează pe ecran, pe câte un rând, cuvintele care cuprind cel puțin o notă muzicală. Dacă nu există astfel de cuvinte, se afișează pe ecran mesajul nu exista.
+
+SOLUTIE:
+
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+using namespace std;
+
+int main(){
+    char s[100];
+    bool ex = false;
+    while(cin >> s){
+        bool e = strstr(s, "DO") != NULL || strstr(s, "RE") != NULL || strstr(s, "MI") != NULL || strstr(s, "FA") != NULL || strstr(s, "SOL") != NULL || strstr(s, "LA") != NULL || strstr(s, "SI") != NULL;
+        if(e != 0){
+            ex = true;
+            cout << s << '\n';
+        }
+    }
+    if(ex == false)
+        cout << "nu exista";
+}
