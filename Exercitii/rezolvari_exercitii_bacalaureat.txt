@@ -1,0 +1,332 @@
+-> Exercitiul #9 <-
+
+Care dintre următoarele expresii C/C++ are valoarea 1 dacă și numai dacă numărul real memorat în variabila x se află în intervalul (-2,2)?
+
+Raspuns: 4-x*x>0
+
+-> Exercitiul #10 <- 
+
+Care este rezultatul evaluării expresiei C/C++ următoare: 11*3/2*2/3?
+
+Raspuns: 10
+
+-> Exercitiul #11 <-
+
+Variabila x este de tip real. Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul real memorat în variabila x nu aparţine intervalului (2,9]?
+
+Raspuns: (x <= 2) || (x > 9)
+
+-> Exercitiul #12 <-
+
+Care dintre următoarele expresii C/C++ are ca valoare cel mai mic dintre numerele naturale nenule, cu cel mult 4 cifre fiecare, memorate în variabilele întregi x şi y?
+
+Raspuns: (x + y - abs(x - y)) / 2
+
+-> Exercitiul #13 <-
+
+Fiecare dintre variabilele întregi x şi y memorează câte un număr natural. Care dintre expresiile C/C++ de mai jos are valoarea 1 dacă şi numai dacă numărul memorat în x este strict mai mare decât 0 şi numărul memorat în y este strict mai mare decât 5?
+
+Raspuns: !(x*(y-5)<=0)
+
+-> Exercitiul #14 <-
+
+Care dintre următoarele expresii C/C++ are ca valoare cel mai mare dintre numerele naturale nenule, cu cel mult 4 cifre fiecare, memorate în variabilele întregi a şi b?
+
+Raspuns: (a+b+abs(a-b))/2
+
+-> Exercitiul #15 <-
+
+Care dintre expresiile C/C++ de mai jos este echivalentă cu următoarea expresie ((a>3) && (a<15)) || (a!=b)?
+
+Raspuns: !((a<=3) || (a>=15)) || (a!=b)
+
+-> Exercitiul #16 <-
+
+Variabilele x şi y sunt de tip întreg, x memorând valoarea 8, iar y valoarea 6. Care dintre expresiile C/C++ de mai jos are valoarea 0?
+
+Raspuns: !(x/2+2==y)
+
+-> Exercitiul #17 <-
+
+Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă variabilele x şi y memorează două numere naturale pare consecutive?
+
+Raspuns: ((x-y==2) || (y-x==2)) && (x%2==0)
+
+-> Exercitiul #18 <-
+
+Care dintre expresiile C/C++ de mai jos este echivalentă cu expresia următoare !((a<5)&&(b>7)) ?
+
+Raspuns: !(a<5) || !(b>7)
+
+-> Exercitiul #19 <-
+
+Pentru care dintre perechile de valori de mai jos expresia C/C++ următoare (a%100==b%100) && (a>99) || (b>99) are valoarea 1?
+
+Raspuns: a=1003 si b=3
+
+-> Exercitiul #20 <-
+
+Variabilele x şi y sunt de tip întreg, x memorând valoarea 4, iar y valoarea 2. Care dintre expresiile C/C++ de mai jos are valoarea 0?
+
+Raspuns: !(x==2*y)
+
+-> Exercitiul #21 <-
+
+Care dintre următoarele instrucţiuni C/C++ determină inserarea cifrei 7 în faţa ultimei cifre a unui număr natural, cu mai mult de 2 cifre, memorat în variabila x?
+
+Raspuns: x=(x/10*10+7)*10+x%10;
+
+-> Exercitiul #24 <-
+
+Care dintre următoarele instrucţiuni C/C++ determină eliminarea cifrei din mijloc a unui număr natural, cu exact 5 cifre, memorat în variabila x?
+
+Raspuns: x=x/1000*100+x%100;
+
+-> Exercitiul #26 <-
+
+Care este valoarea tipărită de secvenţa de program C/C++ de mai jos, ştiind că x şi y sunt variabile întregi, iar z este o variabilă reală?
+
+x=30;
+y=5;
+z=(x+y)/6.0;
+z=floor(z*100);
+z=z/100;
+cout<<z; | printf(“%0.2f”,z);
+
+Raspuns: 5.83
+
+-> Exercitiul #28 <-
+
+Care este valoarea expresiei C/C++ de mai jos dacă variabilele întregi a, b, c au valorile a=20, b=3, c=5?
+
+(a/b%c<=b)||!(b==a)
+
+Raspuns: 1
+
+-> Exercitiul #29 <-
+
+Care dintre expresiile C/C++ de mai jos este echivalentă cu !((a<=b && a>=c) || a<=d)?
+
+Raspuns: (a>b || a<c) && a>d
+
+-> Exercitiul #30 <-
+
+Care din următoarele afirmaţii despre operatorii din C/C++ este falsă?
+
+Raspuns: <= este operator logic
+
+-> Exercitiul #32 <-
+
+Care este cea mai mică valoare pe care o poate avea expresia C/C++ de mai jos dacă variabila x, de tip int, memorează un număr natural cu o singură cifră?
+
+x/7-x%7
+
+Raspuns: -6
+
+-> Exercitiul #33 <-
+
+În expresia C/C++ x%2+(x+1)%2 variabila x este de tip întreg. Această expresie:
+
+Raspuns: are valoarea 1 pentru orice numar natural x
+
+-> Exercitiul #34 <-
+
+Câte valori distincte, numere naturale, poate primi variabila x pentru ca valoarea expresiei x/2/2 scrisă în C/C++ să fie egală cu 1?
+
+Raspuns: 4
+
+-> Exercitiul #35 <-
+
+Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul natural nenul memorat în variabila x, de tip int, este divizibil cu 100?
+
+Raspuns: x%10+x/10%10==0
+
+-> Exercitiul #36 <-
+
+Care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul natural memorat de variabila x de tip int are exact două cifre?
+
+Raspuns: x/100==0 && x/10!=0
+
+-> Exercitiul #37 <-
+
+Se consideră variabila a care memorează un număr cu exact 6 cifre. Care dintre expresiile C/C++ de mai jos are ca valoare numărul format din cele două cifre din mijloc ale valorii memorate în a?
+
+Raspuns: a/100#100
+
+-> Exercitiul #38 <-
+
+Stabiliţi care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul întreg memorat în variabila x nu aparţine intervalului (-35,-20)∪[17,100].
+
+Raspuns: (x<=-35) || ((x<=16) && (x>=-20)) || (x>100)
+
+-> Exercitiul #39 <-
+
+Variabila a memorează un număr natural care are exact 3 cifre. Care dintre expresiile C/C++ de mai jos are ca valoare numărul format din prima şi ultima cifră a numărului memorat de a?
+
+Raspuns: a/100*10+a%10
+
+-> Exercitiul #41 <-
+
+Stabiliţi care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul întreg memorat în variabila x nu aparţine intervalului (-35,-20].
+
+Raspuns: (x<=-35) || (x>-20)
+
+-> Exercitiul #44 <-
+
+Care dintre expresiile următoare, scrise în limbajul C/C++, are valoarea 1 dacă şi numai dacă valorile variabilelor întregi x şi y sunt numere pare?
+
+Raspuns: (x%2==0) && (y%2==0)
+
+-> Exercitiul #46 <-
+
+Care este valoarea expresiei C/C++ de mai jos?
+
+50-(100–300/2/(2+3))
+
+Raspuns: -20
+
+-> Exercitiul #47 <-
+
+Ştiind că variabilele x şi y sunt de tip întreg, care este instrucţiunea prin care variabilei x i se atribuie ultima cifră a numărului natural memorat în variabila y?
+
+Raspuns: y=x%10
+
+-> Exercitiul #48 <-
+
+Ştiind că variabilele x şi y sunt de tip întreg, care este instrucţiunea prin care variabilei x i se atribuie cifra zecilor numărului natural cu cel puţin două cifre memorat de variabila y?
+
+Raspuns: x=y/10%10
+
+-> Exercitiul #49 <-
+
+Care este instrucţiunea prin care variabilei x i se atribuie valoarea sumei cifrelor numărului natural format din exact trei cifre, memorat de variabila întreagă y?
+
+Raspuns: x=y/100+y/10%10+y%10
+
+-> Exercitiul #50 <-
+
+Care este instrucțiunea prin care variabilei întregi x i se atribuie valoarea cifrei sutelor numărului natural cu cel puţin 4 cifre memorat în variabila întreagă y?
+
+Raspuns: x=y/100%10;
+
+-> Exercitiul #51 <-
+
+Care este instrucţiunea prin care variabilei x i se atribuie numărul obţinut prin inversarea ordinii cifrelor numărului natural format din exact 2 cifre, memorat în variabila întreagă y?
+
+Raspuns: x=y%10*10+y/10;
+
+-> Exercitiul #52 <-
+
+Variabila întreagă n memorează un număr natural impar. Care dintre următoarele expresii C/C++ are valoarea 1?
+
+Raspuns: n%2!=0
+
+-> Exercitiul #53 <-
+
+Care dintre următoarele variabile nu îşi modifică valoarea în urma executării secvenţei de instrucţiuni de mai jos, oricare ar fi valorile lor iniţiale? (a, b, c sunt variabile de tip int).
+
+Raspuns: doar a si b
+
+-> Exercitiul #54 <-
+
+Variabilele a, b şi c, de tip int, pot fi iniţializate cu oricare numere naturale impare distincte. Ştiind că c este divizor al lui a, iar b nu este multiplu al lui c, care dintre următoarele expresii scrise în C/C++ are valoare 1?
+
+Raspuns: !((a % c != 0) || !(b % c != 0))
+
+-> Exercitiul #55 <-
+
+Variabila a, de tip int, memorează un număr natural impar, iar variabila b, de tip int, memorează un număr natural par. Care dintre următoarele expresii C/C++ are valoarea 1?
+
+Raspuns: !(!(a%2) || b%2)
+
+-> Exercitiul #56 <-
+
+Variabilele a şi b sunt de tip int, iar variabilele c şi d sunt de tip double. Care dintre următoarele instrucţiuni de atribuire nu este corectă din punct de vedere sintactic?
+
+Raspuns: c=2-d%2*a;
+
+-> Exercitiul #57 <-
+
+Variabila întreagă x memorează un număr natural cu exact 4 cifre. Care dintre următoarele instrucţiuni C/C++ determină, în urma executării, eliminarea cifrei sutelor numărului memorat de variabila x?
+
+Raspuns: x=x/1000*100+x%100;
+
+-> Exercitiul #58 <-
+
+Cărui interval îi aparţine valoarea memorată de variabila reală x astfel încât expresia următoare, scrisă în limbajul C/C++, să aibă valoarea 1?
+
+(x<=-2) || (x>-1) && !(x>=1) || (x>50)
+
+Raspuns: (-∞,-2] ∪ (-1,1) ∪ (50, ∞)
+
+-> Exercitiul #59 <-
+
+Variabila întreagă x memorează un număr natural. Care dintre următoarele expresii C/C++ are valoarea 0 dacă şi numai dacă numărul memorat de x NU este divizibil cu 3?
+
+Raspuns: (1-x%3)*(2-x%3)
+
+-> Exercitiul #60 <-
+
+Cărui interval îi aparţine valoarea memorată de variabila reală x astfel încât expresia următoare, scrisă în limbajul C/C++, să aibă valoarea 1?
+
+!((x<=1) || (x>50))
+
+Raspuns: (1,50]
+
+-> Exercitiul #61 <-
+
+Care dintre următoarele expresii C/C++ este echivalentă cu !((x>=5)&&(x<10))?
+
+Raspuns: (x<5) || (x>=10)
+
+-> Exercitiul #1085 <-
+
+Indicațio expresie C/C++ echivalentă cu următoarea: (x>5)&& (x<20) || (x!=y)
+
+Raspuns: !(x<=5||x>=20)||(x!=y)
+
+-> Exercitiul #1179 <-
+
+Variabilele x și y sunt de tip întreg și memorează numere naturale nenule. Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numărul memorat în x are cifra zecilor egală cu 2 și este un multiplu al numărului memorat în y.
+
+Raspuns: x/10%10==2 && x%y==0
+
+-> Exercitiul #1184 <-
+
+Expresia C/C++ !(a<2001) && (a<=2002) || (a>=2020) && !(a>2021) are valoarea 1 dacă și numai dacă valoarea memorată de variabila reală a aparține:
+
+Raspuns: [2001,2002] ∪[2020,2021]
+
+-> Exercitiul #1187 <-
+
+Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numărul memorat în variabila întreagă x aparține reuniunii de intervale [-21,-2]∪[2,21].
+
+Raspuns: !(x<-21 || x>-2) || !(x<2 || x>21)
+
+-> Exercitiul #1195 <-
+
+Indicați o expresie C/C++ care are valoarea 1.
+
+Raspuns: floor(20.21)/20
+
+-> Exercitiul #1196 <-
+
+Indicați o secvență de instrucțiuni care realizează interschimbarea valorilor variabilelor întregi x și y.
+
+Raspuns: x=x+y; y=x-y; x=x-y;
+
+-> Exercitiul #1197 <-
+
+Toate variabilele din secvența de mai jos sunt de tip char. Scrieți ce se afișează în urma executării secvenței.
+
+c1='m';c2='u';c3='z';c4='e';
+c1=c1+1;
+cout<<c2<<c1<<" ";| printf("%c%c ",c2,c1);cout<<c3<<c4<<c2; | printf("%c%c%c",c3,c4,c2);
+
+Raspuns: un zeu
+
+-> Exercitiul #1198 <-
+
+Variabilele x și y sunt de tip întreg, x memorând valoarea 8, iar y valoarea 6. Indicați expresia C/C++ care are valoarea 0.
+
+Raspuns: !(x/2+2==y)
