@@ -279,11 +279,200 @@ Care dintre următoarele expresii C/C++ este echivalentă cu !((x>=5)&&(x<10))?
 
 Raspuns: (x<5) || (x>=10)
 
+-> Exercitiul #1045 <-
+
+Variabila x este de tip întreg și poate memora un număr natural din intervalul [0,109). Indicați valoarea maximă pe care o poate avea expresia C/C++ x%2020.
+
+Raspuns: 2019
+
+-> Exercitiul #1046 <-
+
+Subprogramul f este definit mai jos.
+
+void f(int x){  
+    cout<<"*";
+    if(x>5) f((x+1)/2); 
+}
+
+Indicați apelul în urma căruia simbolul * se afișează de trei ori.
+
+Raspuns: f(17);
+
+-> Exercitiul #1054 <-
+
+Indicați valoarea expresiei C/C++ de mai jos:
+
+3+5.0/2+2
+
+Raspuns: 7.5
+
+-> Exercitiul #1055 <-
+
+Variabila v memorează un tablou unidimensional cu 4 elemente, numerotate începând de la 0.
+Subprogramul f este definit mai jos.
+
+void f(int i, int v[4]) { 
+    if(i>=3) v[i]=v[i]+1;
+    else f(i+1,v);
+    cout<<v[i];  |  printf("%d",v[i]); 
+} 
+
+Indicați setul de elemente pe care le poate avea tabloul memorat în v, în ordinea în care apar în acesta, astfel încât, în urma apelului de mai jos, să se afișeze pe ecran 2020.
+
+f(0,v);
+
+Raspuns: 0,2,0,1
+
+-> Exercitiul #1056 <-
+
+Utilizând metoda backtracking se generează toate variantele prin care patru persoane pot plăti o consumație totală de 200 de lei în următoarele condiții:
+
+fiecare plătește o sumă nenulă, divizibilă cu 10;
+primul plătește mai mult decât al doilea, al doilea mai mult decât al treilea, iar acesta mai mult decât al patrulea.
+O soluție constă în patru valori, reprezentând, în ordine, sumele plătite de fiecare dintre cele patru persoane. Primele patru soluții generate sunt, în această ordine: (70, 60, 40, 30), (70, 60, 50, 20), (80, 50, 40, 30), (80, 60, 40, 20). Indicați cea de a șasea soluție, în ordinea generării acestora.
+
+Raspuns: (80,70,30,20)
+
+-> Exercitiul #1057 <-
+
+Un arbore cu 10 noduri, numerotate de la 1 la 10, este reprezentat prin vectorul de „tați” (7,5,6,5,7,0,6,3,3,8). Indicați numărul de noduri „frunză” ale acestui arbore.
+
+Raspuns: 5
+
+-> Exercitiul #1058 <-
+
+Un graf neorientat cu 5 noduri este reprezentat prin matricea de adiacență de mai jos. Indicați numărul grafurilor parțiale conexe ale acestuia care sunt diferite de graful dat.
+
+0 1 0 1 1
+1 0 1 0 0
+0 1 0 1 0
+1 0 1 0 0
+1 0 0 0 0
+
+Raspuns: 4
+
+-> Exercitiul #1063 <-
+
+Variabila x este de tip întreg și poate memora un număr din intervalul [1000,2000]. Indicați valoarea minimă pe care o poate avea expresia C/C++ de mai jos.
+
+(x-999)%1000
+
+Raspuns: 0
+
+-> Exercitiul #1064 <-
+
+Subprogramul f este definit mai jos.
+
+void f(int x) 
+{ if(x>=2)   
+  { if(x%2==0) cout<<0;  |  printf(”0”);     
+    f(x/2);
+  }
+  else cout<<7;  |  printf(”7”);
+  cout<<x; | printf(”%d”,x); 
+}
+
+Indicați ce se afișează în urma apelului de mai jos.
+
+f(9);
+
+Raspuns: 0071249
+
+-> Exercitiul #1065 <-
+
+Utilizând metoda backtracking, se generează toate meniurile care cuprind câte patru feluri distincte de mâncare din mulțimea {aperitiv, desert, legume, paste, salată, supă}, fiecare meniu respectând următoarele condiții:
+
+dacă există aperitiv, este servit primul;
+dacă există desert, este servit ultimul;
+NU sunt servite legume și salată în același meniu;
+dacă există paste și supă în același meniu, pastele NU sunt servite înainte de supă.
+Două meniuri sunt distincte dacă diferă prin cel puțin un fel de mâncare sau prin ordinea servirii acestora. Primele cinci meniuri generate sunt, în această ordine: (aperitiv, legume, paste, desert), (aperitiv, legume, supă, desert), (aperitiv, legume, supă, paste), (aperitiv, paste, legume, desert), (aperitiv, paste, salată, desert).
+
+Indicați al șaselea meniu generat
+
+Raspuns: (aperitiv, salată, paste, desert)
+
+-> Exercitiul #1066 <-
+
+Un graf orientat cu 5 vârfuri, numerotate de la 1 la 5, este reprezentat mai jos.
+
+1: 2
+2: 5
+3: 4
+4: 3
+5: 1, 3, 4
+
+Indicați numărul de componente tare conexe ale grafului.
+
+Raspuns: 2
+
+-> Exercitiul #1084 <-
+
+Un arbore cu rădăcină are 8 noduri, numerotate de la 1 la 8, și muchiile [1,3], [1,7], [1,8], [2,4], [3,5], [3,6], [4,5]. Știind că rădăcina arborelui este nodul numerotat cu 6, indicați nodurile de tip frunză ale arborelui dat.
+
+Raspuns: 2,7,8
+
 -> Exercitiul #1085 <-
 
 Indicațio expresie C/C++ echivalentă cu următoarea: (x>5)&& (x<20) || (x!=y)
 
 Raspuns: !(x<=5||x>=20)||(x!=y)
+
+-> Exercitiul #1086 <-
+
+Subprogramul f este definit mai jos. Indicați valoarea f(4770777,7).
+
+int f (int n, int k)
+{ if (n!=0)
+    if(n%10==k)return 1+f(n/10,k);
+  return 0;
+}
+
+Raspuns: 3
+
+-> Exercitiul #1087 <-
+
+Variabila x este declarată mai jos. Indicați secvența care, în urma executării, memorează în variabila x ziua, luna și anul corespunzătoare unei date calendaristice citite de la tastatură.
+
+struct data
+{
+    int zi, luna, an;
+} x
+
+Raspuns: cin>>x.zi>>x.luna>>x.an;  |  scanf(”%d%d%d”,&x.zi,&x.luna,&x.an);
+
+-> Exercitiul #1089 <-
+
+Variabilele s1 și s2 pot memora câte un șir de cel mult 50 de caractere. Scrieți ce se afișează în urma executării secvenței alăturate.
+
+strcpy(s1,"bac2021");
+strcpy(s2,s1+3); 
+strcpy(s2+2,"20-");
+strcat(s2,s1+3);
+cout<<s2; | printf("%s",s2);
+
+Raspuns: 2020-2021
+
+-> Exercitiul #1177 <-
+
+Un graf neorientat are 10 noduri, numerotate de la 1 la 10, și muchiile [1,4], [1,10], [2,3], [2,6], [2,9], [3,6], [4,10], [5,7], [5,8], [5,10], [7,8]. Indicați numărul minim de muchii care trebuie adăugate pentru ca graful obținut să aibă cel puțin un ciclu care să traverseze toate muchiile sale.
+
+Raspuns: 2
+
+-> Exercitiul #1178 <-
+
+Subprogramul f este definit mai jos.
+
+void f(int x)
+{ while(x>1){ x=x-1; f(x-1);}
+  cout<<x;  |  printf(”%d”,x);
+}
+
+Indicați ce se afișează în urma apelului:
+
+f(4);
+
+Raspuns: 01101
 
 -> Exercitiul #1179 <-
 
@@ -297,11 +486,60 @@ Expresia C/C++ !(a<2001) && (a<=2002) || (a>=2020) && !(a>2021) are valoarea 1 d
 
 Raspuns: [2001,2002] ∪[2020,2021]
 
+-> Exercitiul #1185 <-
+
+Subprogramul afis este definit mai jos.
+
+void afis (int a)
+{ cout<<”+”;  |  printf(”+”);
+  if(a>0)
+  { afis(a/1000); 
+    cout<<a;  |  printf(”%d”,a);
+  }
+  cout<<”+”;  |  printf(”+”);
+}
+
+Indicați ce se afișează în urma apelului:
+
+afis(12345);
+
+Raspuns: ++++12+12345+
+
+-> Exercitiul #1186 <-
+
+Scrieți ce se afișează în urma executării secvenței de mai jos, în care variabilele s și t permit memorarea câte unui șir de cel mult 50 de caractere.
+
+strcpy(s,"vorbeste");
+s[3]=s[0]; s[5]=s[2];s[0]=s[1]+1; s[2]=s[1]-2; s[6]=s[4]-1;
+strcpy(t,s); t[3]='\0';
+cout<<t<<" "<<s+3; | printf("%s %s",t,s+3);
+
+Raspuns: pom verde
+
 -> Exercitiul #1187 <-
 
 Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numărul memorat în variabila întreagă x aparține reuniunii de intervale [-21,-2]∪[2,21].
 
 Raspuns: !(x<-21 || x>-2) || !(x<2 || x>21)
+
+-> Exercitiul #1188 <-
+
+Subprogramul f este definit mai jos.
+
+void f (int x)
+{ cout<<"*";  |  printf("*");
+  if(x>0)
+  { cout<<x;  |  printf("%d",x);
+    f(x/100);
+  }
+  cout<<"/";  |  printf("/");
+}
+
+Indicați ce se afișează în urma apelului:
+
+f(54321);
+
+Raspuns: *54321*543*5*////
 
 -> Exercitiul #1195 <-
 
@@ -330,3 +568,319 @@ Raspuns: un zeu
 Variabilele x și y sunt de tip întreg, x memorând valoarea 8, iar y valoarea 6. Indicați expresia C/C++ care are valoarea 0.
 
 Raspuns: !(x/2+2==y)
+
+-> Exercitiul #1199 <-
+
+Subprogramul f este definit mai jos.
+
+int f(int n)
+{ int c;
+  if (n==0) return 9;
+  c=f(n/10); if (n%10<c) return n%10;
+  return c;
+}
+
+Indicați valoarea f(38627).
+
+Raspuns: 2
+
+-> Exercitiul #1203 <-
+
+În secvenţa de mai jos, variabila i este de tip întreg, iar variabilele s și t pot memora câte un şir cu cel mult 20 de caractere. Scrieți ce se afișează pe ecran în urma executării secvenței.
+
+strcpy(s,"sanataTEA");
+cout<<strlen(s);
+i=0;
+while(i<strlen(s))
+  if(s[i]=='a')
+  { strcpy(t, s+i+1); strcpy(s+i, t);}
+  else 
+    i=i+1;
+cout<<s;
+
+Raspuns: 9sntTEA
+
+-> Exercitiul #1208 <-
+
+Algoritmul de mai jos este reprezentat în pseudocod. S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b și cu [c] partea întreagă a numărului real c.
+
+citește n, k (numere naturale)
+p←1
+┌ cât timp n>0 execută
+│ c←n%10
+│┌ dacă k>0 atunci
+││ ┌dacă c%2=1 atunci
+││ │ p←p*c
+││ └■
+│└■
+│ n←[n/10]
+│ k←k-1
+└■ scrie p
+
+Scrieți valoarea care se afișează în urma executării algoritmului dacă se citesc, în această ordine, numerele 296385 și 3.
+
+Raspuns: 15
+
+-> Exercitiul #1209 <-
+
+Algoritmul de mai jos este reprezentat în pseudocod. S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b și cu [c] partea întreagă a numărului real c.
+
+citește n, k (numere naturale)
+p←1
+┌ cât timp n>0 execută
+│ c←n%10
+│┌ dacă k>0 atunci
+││ ┌dacă c%2=1 atunci
+││ │ p←p*c
+││ └■
+│└■
+│ n←[n/10]
+│ k←k-1
+└■ scrie p
+
+Dacă pentru k se citește numărul 4, scrieți cel mai mic și cel mai mare număr din intervalul [104,105) care pot fi citite pentru n, astfel încât, pentru fiecare dintre acestea, în urma executării algoritmului, să se afișeze 1.
+
+Raspuns: 10000 98888
+
+-> Exercitiul #1210 <-
+
+În secvenţa de mai jos, variabila c memorează un caracter, iar variabilele i și k sunt de tip întreg.
+
+k=0;
+for(i=1;i<=9;i++)
+{   cin>>c; | scanf("%c",&c);
+    if(c=='a') k=k+1;
+}
+
+Scrieţi valoarea variabiei k în urma executării secvenţei, știind că se citesc de la tastatură, în această ordine, literele s a n a t a T E A
+
+Raspuns: 3
+
+-> Exercitiul #1211 <-
+
+Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numerele naturale memorate în variabilele întregi x și y sunt pare, consecutive.
+
+Raspuns: ((x-y==2) || (y-x==2)) && (x%2==0)
+
+-> Exercitiul #1212 <-
+
+Subprogramul f este definit mai jos.
+
+void f (int n, int k)
+{ if (n!=0)
+  { f(n/10,k+1);
+    if(n%10==k) cout<<k;| printf(”%d”,k);
+  }
+}
+
+Indicați ce se afișează în urma apelului:
+
+f(7552021,1);
+
+Raspuns: 7521
+
+-> Exercitiul #1216 <-
+
+Variabila i este de tip întreg, iar variabila s permite memorarea unui șir cu cel mult 102 caractere. Scrieți ce se afișează pe ecran în urma executării secvenței următoare.
+
+strcpy(s,"informatica");
+cout<<strlen(s); | printf("%d",strlen(s));
+for (i=0;i<strlen(s);i++)
+  if (strchr("aeiou",s[i])!=NULL)
+    s[i]= '*';
+cout<<s; | printf("%s",s);
+
+Raspuns: 11*nf*rm*t*c*
+
+-> Exercitiul #1218 <-
+
+Variabilele i și j sunt de tip întreg. Indicați expresia care poate înlocui punctele de suspensie astfel încât, în urma executării secvenței obținute, să se afișeze pe ecran valorile de mai jos, în această ordine.
+
+for(i=1;i<=4;i++)
+{ for(j=1;j<=5;j++)
+    cout<<.........<<" "; | printf("%d ",.........);
+  cout<<endl;  |  printf("\n");
+}
+
+1 2 3 4 5
+2 4 6 8 0 
+3 6 9 2 5 
+4 8 2 6 0
+
+Raspuns: (i * j) % 10
+
+-> Exercitiul #1221 <-
+
+Variabilele x și y sunt de tip întreg. Indicați o expresie C/C++ echivalentă cu expresia !(x<3 && y>5).
+
+Raspuns: x>=3 || !(y>5)
+
+-> Exercitiul #1222 <-
+
+Subprogramul f este definit mai jos.
+
+int f(int x, int y)
+{   if(x==0) return 0;
+    if(y==0) return 1;
+    return x%2+y%2+f(x/10,y/10);
+}
+
+Indicați valoarea lui f(2121,19).
+
+Raspuns: 4
+
+-> Exercitiul #1231 <-
+
+Variabile x și y sunt de tip întreg. Indicați o pereche de valori pentru care expresia următoare are valoarea 1: (x%100==y%100)&&(x>99)||(y>99)
+
+Raspuns: x=1003 și y=3
+
+-> Exercitiul #1232 <-
+
+Subprogramele f1 și f2 sunt definite mai jos. Indicați valoarea f2(41382).
+
+int f1(int c)
+{ if (c%2==1) return 1; 
+  else return 2; 
+}
+
+int f2(int n) 
+{ if (n==0) return 0; 
+  else returnf1(n%10)+f2(n/10);
+}
+
+Raspuns: 8
+
+-> Exercitiul #1233 <-
+
+Utilizând metoda backtracking se generează în ordine alfabetică anagramele cuvântului bine. Primele patru soluții generate sunt, în această ordine: bein, beni, bien, bine. Indicați a șaptea soluție generată.
+
+Raspuns: ebin
+
+-> Exercitiul #1238 <-
+
+Variabilele x și y sunt de tip întreg. Indicați o instrucțiune ce realizează o prelucrare echivalentă următoarea.
+
+x=-abs(y);
+
+Raspuns: 
+if(y<0) x=y; 
+else x=-y;
+
+-> Exercitiul #1240 <-
+
+Variabila x este de tip întreg și memorează un număr natural de cel puțin două cifre. Indicați o instrucțiune C/C++ în urma executării căreia se memorează în variabila x numărul obținut din valoarea sa inițială, prin inserarea cifrei 4 între cifra zecilor și cifra unităților.
+
+Raspuns: x=(x/10*10+4)*10+x%10;
+
+-> Exercitiul #1244 <-
+
+În secvența de mai jos variabilele i și j sunt de tip întreg.
+
+for(i=0;i<4;i++)
+{ for(j=0;j<5;j++)
+    cout<<.........<<" "; | printf("%d ",.........);
+  cout<<endl;  |  printf("\n");
+}
+
+Indicați expresia care poate înlocui zona punctată astfel încât, în urma executării secvenței obținute, să se afișeze pe ecran valorile următoare:
+
+0 1 2 0 1
+1 2 0 1 2
+2 0 1 2 0
+0 1 2 0 1
+
+Raspuns: (i+j) % 3
+
+-> Exercitiul #1256 <-
+
+Variabilele x și y sunt de tip real (x≠-2). Indicați o expresie C/C++ corespunzătoare expresiei aritmetice ((x+y)/5 + (x-y)/2) / (x+2).
+
+Raspuns: ((x+y)/5+(x-y)/2)/(x+2)
+
+-> Exercitiul #1257 <-
+
+Subprogramul f este definit mai jos. Indicați valoarea lui f(1234).
+
+int f(int n) 
+{ if (n!=0) 
+   return (n%2)*(n%10)+f(n/10); 
+  return 0;  
+}
+
+Raspuns: 4
+
+-> Exercitiul #1263 <-
+
+Variabila x este de tip real. Indicați o expresie C/C++ care are valoarea 1 pentru orice număr memorat în variabila x.
+
+Raspuns: ceil(x)+1==ceil(x+1)
+
+-> Exercitiul #1265 <-
+
+Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă valorile variabilelor întregi x și y sunt numere pare.
+
+Raspuns: x%2==0 && (y+1)%2!=0
+
+-> Exercitiul #1266 <-
+
+Subprogramul f este definit mai jos. Indicați valorile pe care le pot avea parametrii n și c, astfel încât, în urma apelului, f(n,c) să aibă valoarea 2021.
+
+int f(int n,int c) 
+{ if(n==0) return 0; 
+  else  
+    if(n%10==c) return f(n/10,c); 
+    else return n%10+10*f(n/10,c); 
+}
+
+Raspuns: n=720721 și c=7
+
+-> Exercitiul #1267 <-
+
+Variabila m memorează elementele unui tablou bidimensional cu 100 de linii și 100 de coloane, numerotate de la 0 la 99. Indicați expresia C/C++ prin care poate fi accesat un element aflat pe diagonala secundară a tabloului.
+
+Raspuns: m[42][57]
+
+-> Exercitiul #1271 <-
+
+Variabilele întregi fa și fb memorează numărătorul, respectiv numitorul unei fracții. Indicați o secvență de instrucțiuni C/C++ care să memoreze în variabilele întregi sa și sb numărătorul, respectiv numitorul fracției obținute prin scăderea fracției menționate mai sus din fracția 2020/2021.
+
+Raspuns: 
+sa=2020*fb-2021*fa; 
+sb=fb*2021;
+
+-> Exercitiul #1272 <-
+
+Variabilele x și y sunt de tip real, x are valoarea 3.5, iar y are valoarea 7.2. Indicați expresia C/C++ a cărei valoare este 3.
+
+Raspuns: floor(y-x)
+
+-> Exercitiul #1281 <-
+
+Care dintre următoarele cuvinte este un identificator C++ corect?
+
+Raspuns: x_1
+
+-> Exercitiul #1282 <-
+
+Adevărat sau fals: În C++ toate variabilele trebuie declarate.
+
+Raspuns: Adevărat
+
+-> Exercitiul #1283 <-
+
+Care dintre propozițiile de mai jos este adevărată?
+
+Raspuns: În C++ variabilele pot fi inițializate odată cu declararea.
+
+-> Exercitiul #1284 <-
+
+Adevărat sau fals: În C++ constantele reale au ca seprator zecimal caracterul virgulă ,.
+
+Raspuns: Fals
+
+-> Exercitiul #1285 <-
+
+Care este forma fixă a numărului real -125.47E-2?
+
+Raspuns: 
