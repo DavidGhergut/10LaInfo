@@ -298,6 +298,18 @@ Indicați apelul în urma căruia simbolul * se afișează de trei ori.
 
 Raspuns: f(17);
 
+-> Exercitiul #1047 <-
+
+Utilizând metoda backtracking se generează toate modalitățile de a prepara o băutură din câte 3 sau 4 tipuri de fructe distincte din mulțimea {căpșune, mere, pepene, pere, portocale}. Primele patru soluții generate sunt, în această ordine: (căpșune, mere, pepene), (căpșune, mere, pepene, pere), (căpșune, mere, pepene, portocale), (căpșune, mere, pere). Indicați cea de a șasea soluție generată.
+
+Raspuns: (căpșune, mere, portocale)
+
+-> Exercitiul #1048 <-
+
+Un arbore cu 9 noduri, numerotate de la 1 la 9, este reprezentat prin vectorul de „tați” (8,6,4,2,3,0,4,2,7). Indicați un „frate” al nodului 4.
+
+Raspuns: 8
+
 -> Exercitiul #1054 <-
 
 Indicați valoarea expresiei C/C++ de mai jos:
@@ -406,6 +418,18 @@ Indicați numărul de componente tare conexe ale grafului.
 
 Raspuns: 2
 
+-> Exercitiul #1067 <-
+
+Un arbore cu rădăcină are 20 de noduri, dintre care 10 noduri de tip “frunză”. Indicați numărul maxim de noduri care au același “tată” în acest arbore.
+
+Raspuns: 10
+
+-> Exercitiul #1083 <-
+
+Un graf neorientat are 6 noduri și fiecare dintre acestea are gradul egal cu 1. Indicați numărul de componente conexe ale grafului.
+
+Raspuns: 3
+
 -> Exercitiul #1084 <-
 
 Un arbore cu rădăcină are 8 noduri, numerotate de la 1 la 8, și muchiile [1,3], [1,7], [1,8], [2,4], [3,5], [3,6], [4,5]. Știind că rădăcina arborelui este nodul numerotat cu 6, indicați nodurile de tip frunză ale arborelui dat.
@@ -440,6 +464,12 @@ struct data
 } x
 
 Raspuns: cin>>x.zi>>x.luna>>x.an;  |  scanf(”%d%d%d”,&x.zi,&x.luna,&x.an);
+
+-> Exercitiul #1088 <-
+
+Utilizând metoda backtracking, sunt generate toate numerele din intervalul [100,999], cu proprietatea că au cifrele în ordine crescătoare, cifrele aflate pe poziții consecutive sunt de paritate diferită, iar suma lor este egală cu 14. Scrieți toate numerele generate, în ordine crescătoare, separate prin exact un spațiu.
+
+Raspuns: 149 167 347
 
 -> Exercitiul #1089 <-
 
@@ -479,6 +509,24 @@ Raspuns: 01101
 Variabilele x și y sunt de tip întreg și memorează numere naturale nenule. Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numărul memorat în x are cifra zecilor egală cu 2 și este un multiplu al numărului memorat în y.
 
 Raspuns: x/10%10==2 && x%y==0
+
+-> Exercitiul #1181 <-
+
+Un graf neorientat are 20 de noduri și 4 componente conexe, fiecare dintre acestea fiind arbore. Indicați numărul de muchii ale grafului.
+
+Raspuns: 16
+
+-> Exercitiul #1182 <-
+
+Un graf neorientat are 6 noduri, numerotate de la 1 la 6, și muchiile [1,2], [1,3], [2,3], [2,4], [2,5], [2,6], [3,4], [4,5]. Indicați numărul nodurilor care au gradul un număr par.
+
+Raspuns: 2
+
+-> Exercitiul #1183 <-
+
+Utilizând metoda backtracking, se generează toate modalitățile de forma un grup de patru persoane din mulțimea {Ana, Ioana, Lia, Maria, Miruna, Simona}. Două grupuri diferă prin cel puțin o persoană. Primele cinci soluții generate sunt, în această ordine: (Ana, Ioana, Lia, Maria), (Ana, Ioana, Lia, Miruna), (Ana, Ioana, Lia, Simona), (Ana, Ioana, Maria, Miruna), (Ana, Ioana, Maria,Simona). Indicați o enumerare generată ca soluție, în această formă.
+
+Raspuns: (Ioana, Maria, Miruna, Simona)
 
 -> Exercitiul #1184 <-
 
@@ -541,6 +589,36 @@ f(54321);
 
 Raspuns: *54321*543*5*////
 
+-> Exercitiul #1189 <-
+
+Utilizând metoda backtracking, se generează toate modalitățile de a selecta un grup de patru muzee de vizitat în București, dintre cele aflate în mulțimea {Muzeul de Artă Veche Apuseană(MAVA), Muzeul Colecțiilor de Artă(MCA), Muzeul Căilor Ferate Române (MCFR), Muzeul Național al Hărților și Cărții Vechi(MNHCV), Muzeul Național al Literaturii Române(MNLR), Muzeul Național Tehnic(MNT)}. Două grupuri diferă prin cel puțin un muzeu. Primele cinci soluții generate sunt, în această ordine: (MAVA, MCA, MCFR, MNHCV), (MAVA, MCA, MCFR,MNLR), (MAVA, MCA, MCFR,MNT), (MAVA, MCA, MNHCV,MNLR), (MAVA, MCA, MNHCV,MNT). Indicați o enumerare care este generată ca soluție, în această ordine.
+
+Raspuns: (MCA,MNHCV, MNLR, MNT)
+
+-> Exercitiul #1190 <-
+
+Un graf neorientat cu 5 noduri este reprezentat prin matricea de adiacență de mai jos. Indicați numărul de muchii care pot fi eliminate, astfel încât graful parțial obținut să fie arbore.
+
+0 1 1 0 1 
+1 0 1 0 0 
+1 1 0 1 1 
+0 0 1 0 1 
+1 0 1 1 0
+
+Raspuns: 3
+
+-> Exercitiul #1192 <-
+
+Variabila s permite memorarea unui șir de cel mult 20 de caractere. Scrieți ce se afișează în urma executării secvenței de mai jos.
+
+strcpy(s,"muzeu");
+s[0]=s[0]+1;
+cout<<s[1]<<s[0]<<" "; | printf("%c%c ",s[1],s[0]);
+strcpy(s,"muzeu"+2);
+cout<<s; | printf("%s",s);
+
+Raspuns: un zeu
+
 -> Exercitiul #1195 <-
 
 Indicați o expresie C/C++ care are valoarea 1.
@@ -583,6 +661,12 @@ int f(int n)
 Indicați valoarea f(38627).
 
 Raspuns: 2
+
+-> Exercitiul #1200 <-
+
+Utilizând metoda backtracking se generează, în ordine crescătoare, toate numerele de câte 5 cifre, toate din mulțimea {1,2} cu proprietatea că nu există mai mult de două cifre 1 pe poziții consecutive. Primele 5 soluții generate sunt, în această ordine: 11211, 11212, 11221, 11222, 12112. Indicaţi cea de a 8-a soluţie generată.
+
+Raspuns: 12211
 
 -> Exercitiul #1203 <-
 
@@ -678,6 +762,18 @@ Indicați ce se afișează în urma apelului:
 f(7552021,1);
 
 Raspuns: 7521
+
+-> Exercitiul #1213 <-
+
+Utilizând metoda backtracking se generează toate posibilitățile de a scrie numărul 10 ca sumă de numere prime. Soluțiile generate sunt, în această ordine: 2+2+2+2+2, 2+2+3+3, 2+3+5, 3+7, 5+5. Folosind aceeași metodă se generează toate posibilitățile de a scrie numărul 9 ca sumă de numere prime. Indicați a treia soluție generată.
+
+Raspuns: 2+7
+
+-> Exercitiul #1215 <-
+
+Un graf neorientat are 6 noduri, numerotate de la 1 la 6, și muchiile [1,2], [1,3], [2,3], [2,4], [2,5], [2,6], [3,4], [4,5]. Indicați numărul nodurilor care au gradul un număr impar.
+
+Raspuns: 4
 
 -> Exercitiul #1216 <-
 
@@ -810,6 +906,24 @@ int f(int n)
 
 Raspuns: 4
 
+-> Exercitiul #1258 <-
+
+Utilizând metoda backtracking se generează toate numerele formate din cifre distincte, cifre a căror sumă să fie 6. Primele patru soluții generate sunt, în această ordine: 1023, 1032, 105 și 1203. Indicați cea de a șasea soluție generată.
+
+Raspuns: 1230
+
+-> Exercitiul #1259 <-
+
+Unui arbore cu 10 noduri i se adaugă o muchie, cu extremitățile în două dintre nodurile sale. Indicați numărul ciclurilor elementare pe care le conține graful obținut.
+
+Raspuns: 1
+
+-> Exercitiul #1260 <-
+
+Un graf neorientat are 21 de noduri, numerotate de la 1 la 21; pentru oricare două noduri distincte ale sale, numerotate cu i, respectiv cu j, există muchia [i,j] dacă și numai dacă ultima cifră a lui i este egală cu ultima cifră a lui j. Indicați numărul valorilor nule din matricea de adiacență a grafului.
+
+Raspuns: 21^2−2⋅12
+
 -> Exercitiul #1263 <-
 
 Variabila x este de tip real. Indicați o expresie C/C++ care are valoarea 1 pentru orice număr memorat în variabila x.
@@ -840,6 +954,12 @@ Raspuns: n=720721 și c=7
 Variabila m memorează elementele unui tablou bidimensional cu 100 de linii și 100 de coloane, numerotate de la 0 la 99. Indicați expresia C/C++ prin care poate fi accesat un element aflat pe diagonala secundară a tabloului.
 
 Raspuns: m[42][57]
+
+-> Exercitiul #1268 <-
+
+Un graf neorientat are 6 noduri, numerotate de la 1 la 6, și muchiile [1,2], [1,3], [2,3], [3,4], [3,5], [4,5], [5,6]. Indicați un ciclu elementar al acestui graf.
+
+Raspuns: 1,2,3,1
 
 -> Exercitiul #1271 <-
 
@@ -878,9 +998,3 @@ Raspuns: În C++ variabilele pot fi inițializate odată cu declararea.
 Adevărat sau fals: În C++ constantele reale au ca seprator zecimal caracterul virgulă ,.
 
 Raspuns: Fals
-
--> Exercitiul #1285 <-
-
-Care este forma fixă a numărului real -125.47E-2?
-
-Raspuns: 
