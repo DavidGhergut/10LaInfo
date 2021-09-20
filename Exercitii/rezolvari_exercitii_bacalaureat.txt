@@ -310,6 +310,12 @@ Un arbore cu 9 noduri, numerotate de la 1 la 9, este reprezentat prin vectorul d
 
 Raspuns: 8
 
+-> Exercitiul #1049 <-
+
+Un graf neorientat eulerian cu 5 noduri are un nod cu gradul 4. Indicați numărul minim de muchii ale grafului.
+
+Raspuns: 6
+
 -> Exercitiul #1054 <-
 
 Indicați valoarea expresiei C/C++ de mai jos:
@@ -483,6 +489,12 @@ cout<<s2; | printf("%s",s2);
 
 Raspuns: 2020-2021
 
+-> Exercitiul #1176 <-
+
+Un arbore cu 10 noduri, numerotate de la 1 la 10, este reprezentat prin vectorul de „tați” (0,1,1,1,2,3,3,7,4,6). Indicați numărul de frunze ale arborelui.
+
+Raspuns: 4
+
 -> Exercitiul #1177 <-
 
 Un graf neorientat are 10 noduri, numerotate de la 1 la 10, și muchiile [1,4], [1,10], [2,3], [2,6], [2,9], [3,6], [4,10], [5,7], [5,8], [5,10], [7,8]. Indicați numărul minim de muchii care trebuie adăugate pentru ca graful obținut să aibă cel puțin un ciclu care să traverseze toate muchiile sale.
@@ -509,6 +521,12 @@ Raspuns: 01101
 Variabilele x și y sunt de tip întreg și memorează numere naturale nenule. Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă numărul memorat în x are cifra zecilor egală cu 2 și este un multiplu al numărului memorat în y.
 
 Raspuns: x/10%10==2 && x%y==0
+
+-> Exercitiul #1180 <-
+
+Utilizând metoda backtracking se generează toate posibilitățile de a forma selecțiide câte 4 piese ale soliștilor/formațiilor din mulțimea {Bono, Bruce Springsteen, Bon Jovi, Leonard Cohen, Portugal.The Man}, astfel încât pe oricare două poziții alăturate să nu se afle două piese ale soliștilor/formațiilor din submulțimea {Bono, Bon Jovi, Portugal.TheMan}. Primele cinci selecții generate sunt, în această ordine, (Bono, Bruce Springsteen, Bono, Bruce  Springsteen), (Bono, Bruce Springsteen, Bono, Leonard Cohen), (Bono, Bruce Springsteen, Bruce Springsteen, Bono), (Bono, Bruce Springsteen, Bruce Springsteen, Bruce Springsteen), (Bono, Bruce Springsteen, Bruce Springsteen, Bon Jovi). Ultima selecție generată este:
+
+Raspuns: (Portugal.The Man, Leonard Cohen, Portugal.The Man, Leonard Cohen)
 
 -> Exercitiul #1181 <-
 
@@ -607,6 +625,12 @@ Un graf neorientat cu 5 noduri este reprezentat prin matricea de adiacență de 
 
 Raspuns: 3
 
+-> Exercitiul #1191 <-
+
+Un graf neorientat cu 7 noduri, numerotate de la 1 la 7, are mulțimea muchiilor {[2,3], [2,5], [2,6], [3,6], [4,7], [5,1], [6,5]}. Indicați numărul de subgrafuri ale sale, pentru fiecare dintre acestea mulțimea muchiilor fiind {[2,3], [2,6], [3,6]}.
+
+Raspuns: 6
+
 -> Exercitiul #1192 <-
 
 Variabila s permite memorarea unui șir de cel mult 20 de caractere. Scrieți ce se afișează în urma executării secvenței de mai jos.
@@ -667,6 +691,18 @@ Raspuns: 2
 Utilizând metoda backtracking se generează, în ordine crescătoare, toate numerele de câte 5 cifre, toate din mulțimea {1,2} cu proprietatea că nu există mai mult de două cifre 1 pe poziții consecutive. Primele 5 soluții generate sunt, în această ordine: 11211, 11212, 11221, 11222, 12112. Indicaţi cea de a 8-a soluţie generată.
 
 Raspuns: 12211
+
+-> Exercitiul #1201 <-
+
+Un arbore are 10 noduri, numerotate de la 1 la 10, și muchiile [1,2], [1,3], [1,5], [1,6], [2,8], [2,9], [3,4], [3,10], [4,7]. Indicați lungimea unui lanț elementar care are ca extremități nodurile 6 și 7.
+
+Raspuns: 4
+
+-> Exercitiul #1202 <-
+
+Indicați numărul grafurilor neorientate, distincte, cu 5 noduri, care se pot construi. Două grafuri sunt distincte dacă matricele lor de adiacență sunt diferite.
+
+Raspuns: 2^10
 
 -> Exercitiul #1203 <-
 
@@ -769,6 +805,12 @@ Utilizând metoda backtracking se generează toate posibilitățile de a scrie n
 
 Raspuns: 2+7
 
+-> Exercitiul #1214 <-
+
+Un arbore cu rădăcină, cu 9 noduri, numerotate de la 1 la 9, este reprezentat prin vectorul de „tați” (8,7,6,5,7,7,8,0,8). Indicați toți descendenții nodului 7.
+
+Raspuns: 2,3,4,5,6
+
 -> Exercitiul #1215 <-
 
 Un graf neorientat are 6 noduri, numerotate de la 1 la 6, și muchiile [1,2], [1,3], [2,3], [2,4], [2,5], [2,6], [3,4], [4,5]. Indicați numărul nodurilor care au gradul un număr impar.
@@ -825,6 +867,24 @@ Indicați valoarea lui f(2121,19).
 
 Raspuns: 4
 
+-> Exercitiul #1223 <-
+
+Pe parcursul vacanței au loc mai multe reprezentații online ale unei piese de teatru; pentru o reprezentație sunt necesari trei copii, unul pentru rolul principal, iar fiecare dintre ceilalți doi pentru câte un rol secundar. Pentru oricare două reprezentații distincte cel puțin un rol este atribuit, în cele două distribuții, unor copii diferiți. În urma audițiilor au fost selectați șase copii, Alex, Cezar, Tudor, Daria, Ela și Maria:doar Alex poate primi rolul principal, iar fiecare dintre ceilalți cinci copii poate interpreta oricare dintre cele două roluri secundare. De exemplu, pentru patru reprezentații sunt distribuiți, în ordinea rolurilor, copiii: (Alex, Ela, Maria), (Alex, Maria, Ela), (Alex, Maria, Cezar), (Alex, Cezar, Tudor). Indicați numărul maxim de reprezentații distincte în care poate fi distribuită Daria.
+
+Raspuns: 8
+
+-> Exercitiul #1224 <-
+
+Un arbore cu 7 noduri, numerotate de la 1 la 7, are drept rădăcină nodul numerotat cu 4 și este reprezentat în figura alăturată. Indicați vectorul de “tați” al arborelui.
+
+Raspuns: (7,4,5,0,4,5,4)
+
+-> Exercitiul #1225 <-
+
+Un graf neorientat are 10 noduri, numerotate de la 1 la 10, și muchiile [1,2], [2,3], [2,10], [3,10], [4,5], [4,6], [5,6], [6,9], [7,8], [7,9], [8,9]. Indicați numărul minim de muchii care trebuie adăugate pentru ca în graful obținut toate nodurile să aibă drept grade numere pare.
+
+Raspuns: 2
+
 -> Exercitiul #1231 <-
 
 Variabile x și y sunt de tip întreg. Indicați o pereche de valori pentru care expresia următoare are valoarea 1: (x%100==y%100)&&(x>99)||(y>99)
@@ -853,6 +913,18 @@ Utilizând metoda backtracking se generează în ordine alfabetică anagramele c
 
 Raspuns: ebin
 
+-> Exercitiul #1234
+
+Un arbore cu rădăcină, cu 7 noduri, numerotate de la 1 la 7, este reprezentat prin vectorul de „tați” (5,1,5,1,0,7,5). Indicați etichetele tuturor nodurilor de tip „frunză”.
+
+Raspuns: 2 3 4 6
+
+-> Exercitiul #1235 <-
+
+Un graf neorientat are 5 noduri, etichetate cu câte o literă distinctă din cuvântul lista, în care orice nod etichetat cu o vocală este adiacent doar cu nodurile etichetate cu consoane, iar orice nod etichetat cu o consoană este adiacent doar cu nodurile etichetate cu vocale. Indicați numărul de muchii ale acestui graf.
+
+Raspuns: 6
+
 -> Exercitiul #1238 <-
 
 Variabilele x și y sunt de tip întreg. Indicați o instrucțiune ce realizează o prelucrare echivalentă următoarea.
@@ -868,6 +940,12 @@ else x=-y;
 Variabila x este de tip întreg și memorează un număr natural de cel puțin două cifre. Indicați o instrucțiune C/C++ în urma executării căreia se memorează în variabila x numărul obținut din valoarea sa inițială, prin inserarea cifrei 4 între cifra zecilor și cifra unităților.
 
 Raspuns: x=(x/10*10+4)*10+x%10;
+
+-> Exercitiul #1241 <-
+
+Utilizând metoda backtracking se generează toate posibilitățile de a planta de-a lungul unei străzi cinci arbori din mulțimea {salcie,carpen,larice,fag,ulm}. Două soluții sunt diferite dacă ordinea arborilor diferă. Primele patru soluții obținute sunt, în această ordine: (salcie, carpen, larice, fag, ulm), (salcie, carpen, larice, ulm, fag), (salcie, carpen, fag, larice, ulm), (salcie, carpen, fag, ulm, larice). Indicați antepenultima soluție generată.
+
+Raspuns: (ulm, fag, carpen, larice,salcie)
 
 -> Exercitiul #1244 <-
 
@@ -960,6 +1038,14 @@ Raspuns: m[42][57]
 Un graf neorientat are 6 noduri, numerotate de la 1 la 6, și muchiile [1,2], [1,3], [2,3], [3,4], [3,5], [4,5], [5,6]. Indicați un ciclu elementar al acestui graf.
 
 Raspuns: 1,2,3,1
+
+-> Exercitiul #1269 <-
+
+Într-un arbore cu rădăcină un nod se află pe nivelul x dacă lanțul elementar care are o extremitate în nodul respectiv și cealaltă extremitate în rădăcina arborelui are lungimea x. Pe nivelul 0 se află un singur nod (rădăcina).
+
+Într-un arbore cu rădăcină toate nodurile de pe același nivel au un număr egal de „fii” și nu există două niveluri diferite cu același număr de noduri. Indicați numărul minim de noduri de pe nivelul 3.
+
+Raspuns: 8
 
 -> Exercitiul #1271 <-
 
