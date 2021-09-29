@@ -279,6 +279,74 @@ Care dintre următoarele expresii C/C++ este echivalentă cu !((x>=5)&&(x<10))?
 
 Raspuns: (x<5) || (x>=10)
 
+-> Exercitiul #376 <-
+
+Utilizând metoda backtracking se generează în ordine lexicografică cuvintele de câte patru litere din mulţimea A={a,b,c,d,e}, cuvinte care nu conţin două vocale alăturate. Primele opt cuvinte generate sunt, în ordine: abab, abac, abad, abba, abbb, abbc, abbd, abbe.
+
+Câte dintre cuvintele generate încep cu litera b şi se termină cu litera e?
+
+Raspuns: 15
+
+-> Execitiul #377 <-
+
+Utilizând metoda backtracking se generează în ordine lexicografică cuvintele de câte patru litere din mulţimea A={a,b,c,d,e}, cuvinte care nu conţin două vocale alăturate. Primele opt cuvinte generate sunt, în ordine: abab, abac, abad, abba, abbb, abbc, abbd, abbe.
+
+Care este ultimul cuvânt generat?
+
+Raspuns: eded
+
+-> Exercitiul #378 <-
+
+Utilizând metoda backtracking se generează în ordine lexicografică cuvintele de câte patru litere din mulţimea A={a,b,c,d,e}, cuvinte care nu conţin două vocale alăturate. Primele opt cuvinte generate sunt, în ordine: abab, abac, abad, abba, abbb, abbc, abbd, abbe.
+
+Care este penultimul cuvânt generat?
+
+Raspuns: edec
+
+-> Exercitiul #379 <-
+
+Utilizând metoda backtracking se generează în ordine lexicografică cuvintele de câte patru litere din mulţimea A={a,b,c,d,e}, cuvinte care nu conţin două vocale alăturate. Primele opt cuvinte generate sunt, în ordine: abab, abac, abad, abba, abbb, abbc, abbd, abbe.
+
+Care este antepenultimul cuvânt generat?
+
+Raspuns: edeb
+
+-> Exercitiul #380 <-
+
+Folosind modelul combinărilor se generează numerele naturale cu câte trei cifre distincte din mulţimea {1,2,3,7}, numere cu cifrele în ordine strict crescătoare, obţinându-se, în ordine: 123, 127, 137, 237. Dacă se utilizează exact aceeaşi metodă pentru a genera numerele naturale cu patru cifre distincte din mulţimea {1,2,3,4,5,6,7,8}, câte dintre numerele generate au prima cifră 2 şi ultima cifră 7?
+
+Raspuns: 6
+
+-> Exercitiul #381 <-
+
+Utilizând metoda backtracking sunt generate numerele de 3 cifre, având toate cifrele distincte şi cu proprietatea că cifrele aflate pe poziţii consecutive sunt de paritate diferită. Ştiind că primele şase soluţii generate sunt, în această ordine, 103, 105, 107, 109, 123, 125, care este a zecea soluţie generată?
+
+Raspuns: 145
+
+-> Exercitiul #382 <-
+
+Folosind tehnica bactracking un elev a scris un program care generează toate numerele de câte n cifre (0<n≤9), cifrele fiind în ordine strict crescătoare. Dacă n este egal cu 5, scrieți în ordine crescătoare, separate prin câte un spațiu, toate numerele având cifra unităților 6, care vor fi generate de program.
+
+Raspuns: 12346 12356 12456 13456 23456
+
+-> Exercitiul #383 <-
+
+Utilizând metoda backtracking sunt generate numerele de 3 cifre, având toate cifrele în ordine strict crescătoare şi cu proprietatea că cifrele aflate pe poziţii consecutive sunt de paritate diferită. Ştiind că primele cinci soluţii generate sunt, în această ordine, 123, 125, 127, 129, 145, care este cel de al 8-lea număr generat?
+
+Raspuns: 167
+
+-> Exercitiul #384 <-
+
+Utilizând metoda backtracking, sunt generate în ordine crescătoare toate numerele de 3 cifre, astfel încât cifrele sunt în ordine crescătoare, iar cifrele aflate pe poziţii consecutive sunt de paritate diferită. Ştiind că primele trei soluţii generate sunt, în această ordine, 123, 125, 127, scrieţi în ordine crescătoare, separate prin câte un spațiu toate numerele generate care au suma cifrelor egală cu 12.
+
+Raspuns: 129 147 345
+
+-> Exercitiul #385 <-
+
+Un elev a scris un program care, folosind metoda backtracking, generează toate numerele de câte 5 cifre, cifrele fiind în ordine strict crescătoare. Scrieţi în ordine crescătoare, separate prin câte un spațiu toate numerele generate de program care au prima cifră 5.
+
+Raspuns: 56789
+
 -> Exercitiul #1045 <-
 
 Variabila x este de tip întreg și poate memora un număr natural din intervalul [0,109). Indicați valoarea maximă pe care o poate avea expresia C/C++ x%2020.
