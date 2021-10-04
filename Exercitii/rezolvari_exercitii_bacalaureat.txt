@@ -309,6 +309,12 @@ Care dintre următoarele expresii C/C++ este echivalentă cu !((x>=5)&&(x<10))?
 
 Raspuns: (x<5) || (x>=10)
 
+-> Exercitiul #146 <-
+
+Într-un tablou bidimensional A, cu n linii şi n coloane, notăm cu Aij elementul aflat pe linia i şi coloana j (1≤i≤n, 1≤j≤n). Care este valoarea expresiei j-i dacă elementul Aij este situat pe diagonala principală a tabloului A?
+
+Raspuns: 0
+
 -> Exercitiul #161 <-
 
 În secvenţa de mai jos, variabilele i şi j sunt de tip întreg, iar variabila a memorează o matrice în care prima linie şi prima coloană sunt numerotate cu 1. Toate elementele matricei primesc valori în urma executării secvenţei.
@@ -434,6 +440,18 @@ Indicați expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natu
 
 Raspuns: !((n%2==1) || (n%5==0))
 
+-> Exercitiul #498 <-
+
+Valoare expresiei C/C++ 42/10*29/10 este:
+
+Raspuns: 11
+
+-> Exercitiul #503 <-
+
+Variabila x este de tip întreg și poate memora un număr natural cu cel mult două cifre. Valoarea maximă pe care o poate avea expresia C/C++ x%7 este:
+
+Raspuns: 6
+
 -> Exercitiul #518 <-
 
 Valoarea expresiei C/C++ 7+5/2  este
@@ -477,6 +495,43 @@ S-a notat cu a%b restul împărţirii numărului natural a la numărul natural n
 Scrieţi valorile afişate în urma executării algoritmului dacă se citesc, în această ordine, numerele 11, 30 și 7.
 
 Raspuns: 14 28
+
+-> Exercitiul #786 <-
+
+Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natural memorat în variabila întreagă x are exact trei cifre.
+
+Raspuns: x/1000==0 && x/100!=0
+
+-> Exercitiul #791 <-
+
+Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natural memorat în variabila întreagă x are exact o cifră.
+
+Raspuns: x%10==x
+
+-> Exercitiul #798 <-
+
+Se consideră algoritmul de mai jos, reprezentat în pseudocod. S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b.
+
+citeşte a,b
+   (numere naturale, a≥2, b≥2) 
+┌dacă a>b atunci 
+│ x←a  
+│ a←b 
+│ b←x 
+└■
+ s←0 
+┌pentru x←a,b execută
+│ c←2 
+│┌cât timp x%c>0 execută
+││ c←c+1 
+│└■
+│s←s+c 
+└■
+scrie s 
+
+Scrieți valoarea afișată dacă se citesc, în această ordine, numerele 7, 4.
+
+Raspuns: 16
 
 -> Exercitiul #812 <-
 
