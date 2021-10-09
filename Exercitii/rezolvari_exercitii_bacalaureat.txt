@@ -191,6 +191,17 @@ Stabiliţi care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numa
 
 Raspuns: (x<=-35) || (x>-20)
 
+-> Exercitiul #43 <-
+
+Care este valoarea pe care trebuie să o aibă iniţial variabila întreagă x pentru ca, în urma executării secvenţei de mai jos, să se afişeze HHHHHH?
+
+while (x!=3){
+  x=x-1;
+  cout<<"HH"; | printf(”HH”);
+}
+
+Raspuns: 6
+
 -> Exercitiul #44 <-
 
 Care dintre expresiile următoare, scrise în limbajul C/C++, are valoarea 1 dacă şi numai dacă valorile variabilelor întregi x şi y sunt numere pare?
@@ -315,6 +326,18 @@ Raspuns: (x<5) || (x>=10)
 
 Raspuns: 0
 
+-> Exercitiul #157 <-
+
+În secvenţa de mai jos, variabilele i şi j sunt de tip întreg, iar variabila a memorează o matrice în care prima linie şi prima coloană sunt numerotate cu 0. Toate elementele matricei primesc valori în urma executării secvenţei.
+
+Scrieţi în ordine, începând cu prima linie, separate prin exact un spațiu, doar elementele situate pe cea de-a treia coloană a matricei.
+
+for(j=0;j<6;j++)
+  for(i=0;i<4;i++)
+    a[i][j]=2*i+j;
+
+Raspuns: 2 4 6 8
+
 -> Exercitiul #161 <-
 
 În secvenţa de mai jos, variabilele i şi j sunt de tip întreg, iar variabila a memorează o matrice în care prima linie şi prima coloană sunt numerotate cu 1. Toate elementele matricei primesc valori în urma executării secvenţei.
@@ -353,6 +376,18 @@ Ce valoare se va afişa în urma executării secvenţei dacă se prelucrează ta
 1 2 3 4 5
 
 Raspuns: 12
+
+-> Exercitiul #319 <-
+
+Pentru o matrice t cu 8 linii şi 8 coloane, numerotate de la 0 la 7, cu elemente numere întregi, secvenţa de program de mai jos, în care variabilele z, i şi j sunt de tip întreg, determină, în urma executării ei, memorarea în z a
+sumei tuturor elementelor situate:
+
+z=0;
+for(i=0;i<8;i++)
+  for(j=0;j<i;j++)
+    z=z+t[i][j];
+
+Raspuns: strict sub diagonala principală
 
 -> Exercitiul #323 <-
 
@@ -457,6 +492,12 @@ Raspuns: 6
 Valoarea expresiei C/C++ 7+5/2  este
 
 Raspuns: 9
+
+-> Exercitiul #524 <-
+
+Indicaţi expresia care are valoarea 1 dacă şi numai dacă numărul memorat în variabila întreagă x are exact două cifre, iar cifra unităţilor este nenulă.
+
+Raspuns: (x/10)*(x%10)!=0 && x/100==0
 
 -> Exercitiul #549 <-
 
@@ -670,6 +711,12 @@ Raspuns: (45,20,17,16,12,12,10,7,3,2)
 Indicați expresia C/C++ care are valoarea 1 dacă și numai dacă valorile variabilelor întregi x și y sunt nenule și au același semn.
 
 Raspuns: x*y>0
+
+-> Exercitiul #914 <-
+
+Variabila x este de tip întreg. Indicați o expresie care are valoarea 1 dacă și numai dacă expresia C/C++ x<=3 || x>10 are valoarea 1.
+
+Raspuns: !(x>3) || !(x<=10)
 
 -> Exercitiul #976 <-
 
