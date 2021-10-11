@@ -81,6 +81,18 @@ Care dintre următoarele instrucţiuni C/C++ determină inserarea cifrei 7 în f
 
 Raspuns: x=(x/10*10+7)*10+x%10;
 
+-> Exercitiul #22 <-
+
+Care este valoarea pe care poate să o aibă iniţial variabila întreagă x dacă, la sfârşitul executării secvenţei de mai jos, variabila întreagă y are valoarea 2?
+
+y=0;
+do{
+ x=x/10;
+ y=y+1;
+} while(x%100==0);
+
+Raspuns: 5000
+
 -> Exercitiul #24 <-
 
 Care dintre următoarele instrucţiuni C/C++ determină eliminarea cifrei din mijloc a unui număr natural, cu exact 5 cifre, memorat în variabila x?
@@ -134,6 +146,19 @@ Raspuns: (a>b || a<c) && a>d
 Care din următoarele afirmaţii despre operatorii din C/C++ este falsă?
 
 Raspuns: <= este operator logic
+
+-> Exercitiul #31 <-
+
+În secvenţa pseudocod de mai jos, toate variabilele memorează numere naturale. Cu ce valori pot fi înlocuite punctele de suspensie din secvenţă astfel încât, la finalul executării secvenţei să se afişeze, în acestă ordine, valorile 16 şi 41?
+
+a←...
+b←...
+┌pentru i←3,7 execută
+│ c←a+b; x←a; a←b; b←c
+└■
+scrie x,c
+
+Raspuns: 5 şi 2
 
 -> Exercitiul #32 <-
 
@@ -190,6 +215,19 @@ Raspuns: a/100*10+a%10
 Stabiliţi care dintre următoarele expresii C/C++ are valoarea 1 dacă şi numai dacă numărul întreg memorat în variabila x nu aparţine intervalului (-35,-20].
 
 Raspuns: (x<=-35) || (x>-20)
+
+-> Exercitiul #42 <-
+
+În secvenţa de instrucţiuni de mai jos, variabilele x şi y sunt de tip int. Care este valoarea pe care trebuie să o aibă iniţial variabila x dacă la finalul executării secvenţei s-a afişat un singur caracter asterisc (*)?
+
+y=x;
+while(x<=3)
+{
+ cout<<"*"; | printf("*");
+ y=y+1; x=x+y;
+}
+
+Raspuns: 2
 
 -> Exercitiul #43 <-
 
@@ -320,11 +358,54 @@ Care dintre următoarele expresii C/C++ este echivalentă cu !((x>=5)&&(x<10))?
 
 Raspuns: (x<5) || (x>=10)
 
+-> Exercitiul #66 <-
+
+În secvenţa de instrucţiuni de mai jos, variabila s memorează un şir de caractere format doar din litere ale alfabetului englez, iar variabilele i şi n sunt de tip int. Ştiind că în urma executării secvenţei s-a afişat succesiunea de caractere eied*eael* scrieţi care este şirul de caractere memorat de variabila s.
+
+n=strlen(s);
+for(i=0;i<n;i++)
+  if (s[i]==’e’) cout<<’*’;
+  else cout<<'e'<<s[i];
+
+Raspuns: ideale
+
+-> Exercitiul #70 <-
+
+Care dintre următoarele expresii reprezintă un element al tabloului bidimensional a, declarat mai jos?
+
+int a[5][6];
+
+Raspuns: a[2][3]
+
+-> Exercitiul #121 <-
+
+În secvenţa de mai jos, variabila a memorează un tablou bidimensional cu 20 de linii şi 20 de coloane, numerotate de la 1 la 20, cu elementele reale. Variabila p este reală, iar i este de tip întreg.
+
+Care dintre instrucţiunile de mai jos poate înlocui punctele de suspensie din secvenţa de program următoare astfel încât executarea acesteia să determine memorarea în variabila p a valorii produsului celor 40 de elemente aflate pe diagonalele matricei.
+
+p=1;
+for(i=1;i<=20;i++)
+    ....
+
+Raspuns: p=p*a[21-i][21-i]*a[i][21-i];
+
 -> Exercitiul #146 <-
 
 Într-un tablou bidimensional A, cu n linii şi n coloane, notăm cu Aij elementul aflat pe linia i şi coloana j (1≤i≤n, 1≤j≤n). Care este valoarea expresiei j-i dacă elementul Aij este situat pe diagonala principală a tabloului A?
 
 Raspuns: 0
+
+-> Exercitiul #156 <-
+
+În secvenţa de mai jos, variabilele i şi j sunt de tip întreg, iar variabila a memorează o matrice în care prima linie şi prima coloană sunt numerotate cu 1. Toate elementele matricei primesc valori în urma executării secvenţei.
+
+Scrieţi în ordine, începând cu prima linie, separate prin exact un spațiu, doar elementele situate pe cea de-a treia coloană a matricei.
+
+for(j=1;j<=6;j++)
+  for(i=1;i<=4;i++)
+    a[i][j]=2*i+j;
+
+Raspuns: 5 7 9 11
 
 -> Exercitiul #157 <-
 
@@ -338,6 +419,12 @@ for(j=0;j<6;j++)
 
 Raspuns: 2 4 6 8
 
+-> Exercitiul #160 <-
+
+Într-o structură de date de tip coadă au fost adăugate, în această ordine, următoarele valori: 3, 10, 2, 8 şi 6. Care este ultima valoare care s-a extras din coadă dacă s-au efectuat, în această ordine, următoarele operaţii: extragerea unui element, adăugarea valorii 100, extragerea a trei elemente.
+
+Raspuns: 8
+
 -> Exercitiul #161 <-
 
 În secvenţa de mai jos, variabilele i şi j sunt de tip întreg, iar variabila a memorează o matrice în care prima linie şi prima coloană sunt numerotate cu 1. Toate elementele matricei primesc valori în urma executării secvenţei.
@@ -350,11 +437,48 @@ for(j=1;j<=6;j++)
 
 Raspuns: 3 4 5 6 7 8
 
+-> Exercitiul #194 <-
+
+Variabila a memorează un tablou bidimensional cu 5 linii și 5 coloane, numerotate de la 1 la 5, ale cărui elemente sunt numere întregi. Care este cea mai mare valoare, memorată în tablou, deasupra diagonalei principale a tabloului construit în urma executării secvenţei de program de mai jos?
+
+for(i=1;i<=5;i++)
+  for(j=1;j<=5;j++)
+    a[i][j]=j%i+i%j;
+
+Raspuns: 5
+
 -> Exercitiul #212 <-
 
 Fiind dat un tablou bidimensional cu 20 linii şi 20 coloane, câte elemente se găsesc strict deasupra diagonalei secundare a tabloului?
 
 Raspuns: 190
+
+-> Exercitiul #215 <-
+
+Elementele tabloului bidimensional următor, cu 5 linii şi 5 coloane, sunt toate numerele naturale cuprinse între 1 şi 25 aşezate în spirală, începând cu primul element al primei linii şi continuând în sens invers trigonometric.
+
+ 1  2  3  4 5
+16 17 18 19 6
+15 24 25 20 7
+14 23 22 21 8
+13 12 11 10 9 
+
+Care este ultima cifră a produsului numerelor impare aflate sub diagonala secundară (exclusiv diagonala secundară), în cazul unui tablou bidimensional cu 4 linii şi 4 coloane generat după aceeaşi regulă?
+
+Raspuns: 5
+
+-> Exercitiul #220 <-
+
+Considerăm declararea următoare folosită pentru a memora numele, prenumele şi cele două note ale unui elev.
+
+struct elev{
+  char nume[10], prenume[20];
+  float nota1, nota2;
+} x;
+
+Care dintre instrucţiunile de mai jos calculează în variabila reală m media aritmetică a notelor elevului ale cărui informaţii sunt memorate în variabila x?
+
+Raspuns: m=(x.nota1+x.nota2)/2;
 
 -> Exercitiul #253 <-
 
@@ -376,6 +500,57 @@ Ce valoare se va afişa în urma executării secvenţei dacă se prelucrează ta
 1 2 3 4 5
 
 Raspuns: 12
+
+-> Exercitiul #257 <-
+
+În secvenţa alăturată, variabila x memorează un şir de caractere, iar toate celelalte variabile sunt de tip întreg.
+
+strcpy(x,”bac2009”);
+k1=strlen(x);
+k2=0;
+for (i=0;i<strlen(x);i++)
+  if( x[i]>=’0’ && x[i]<=’9’)
+    k2=k2+1;
+
+Ce valori au variabilele k1 şi k2 după executarea secvenţei? Scrieți valorile în ordine, separate prin exact un spațiu.
+
+Raspuns: 7 4
+
+-> Exercitiul #260 <-
+
+Considerăm următoarele declarări:
+
+int i,aux,a[10][10];
+
+Ce valori se afişează în urma executării secvenţei de mai jos dacă liniile şi coloanele tabloului bidimensional sunt numerotate de la 0 la 9 şi iniţial fiecare linie a tabloului conţine, de la stânga la dreapta, în ordine descrescătoare, toate numerele naturale, de la 10 la 1
+
+for (i=0;i<=8;i++)
+  if( a[i][9-i]<a[i+1][8-i])
+  { aux=a[i][9-i];
+    a[i][9-i]=a[i+1][8-i];
+    a[i+1][8-i]=aux;}
+cout<<a[0][9]<<" "<<a[9][0];
+
+Raspuns: 2 1
+
+-> Exercitiul #275 <-
+
+Fie a o matrice cu 5 linii şi 5 coloane numerotate de la 1 la 5. Pentru fiecare element a[i][j] (1≤i≤5, 1≤j≤5) expresia a[i][j]==(i-1)*5+j este nenulă. Care este valoarea sumei elementelor de pe diagonala secundară a matricei?
+
+Raspuns: 65
+
+-> Exercitiul #315 <-
+
+În secvenţa de program următoare, variabila t memorează o matrice cu 5 linii şi 5 coloane, numerotate de la 0 la 4, cu elemente numere întregi, iar celelalte variabile sunt întregi.
+
+x=0;
+for(i=0;i<5;i++)
+  for(j=i+1;j<5;j++)
+    x=x+t[i][j];
+
+Executarea acestei secvenţe determină memorarea în variabila x a sumei elementelor situate:
+
+Raspuns: strict deasupra diagonalei principale
 
 -> Exercitiul #319 <-
 
@@ -400,6 +575,40 @@ for(i=0;i<8;i++)
     z=z+t[i][j];
 
 Raspuns: deasupra diagonalei secundare, inclusiv diagonala secundară
+
+-> Exercitiul #330 <-
+
+În secvenţa de program următoare, variabila a memorează o matrice cu 8 linii şi 8 coloane (numerotate de la 1 la 8), cu elemente numere întregi, iar toate celelalte variabile sunt întregi.
+
+Ce valoare va avea elementul a[8][8] după executarea secvenţei?
+
+for(i = 1; i<=8; i++)
+{ k=i;
+  for(j = 1; j<=8; j++)
+  { a[i][j]=k; k=k+1; }
+}
+
+Raspuns: 15
+
+-> Exercitiul #351 <-
+
+În declararea de mai jos, variabila p memorează în câmpul x abscisa, iar în câmpul y ordonata unui punct din planul xOy. Dacă punctul se află în semiplanul din dreapta axei Oy (dar nu pe această axă), care dintre expresiile de mai jos are valoarea 1?
+
+struct
+ {float x;
+ float y;} p;
+
+Raspuns: p.x>0
+
+-> Exercitiul #365 <-
+
+În secvenţa următoare, i, j şi n sunt variabile întregi, iar a este o matrice pătratică formată din n linii şi n coloane numerotate de la 0 la n-1. Care este suma elementelor de pe diagonala secundară din matricea a, în urma executării acestei secvenţe, dacă n=8?
+
+for(i=0; i<n; i++)
+  for(j=0; j<n; j++)
+    a[i][j] = (i+j)%n;
+
+Raspuns: 56
 
 -> Exercitiul #376 <-
 
@@ -469,11 +678,23 @@ Un elev a scris un program care, folosind metoda backtracking, generează toate 
 
 Raspuns: 56789
 
+-> Exercitiul #415 <-
+
+Cea mai mare dintre valorile strict negative memorate într-un tablou unidimensional NU există dacă:
+
+Raspuns: în tablou sunt memorate numai valori strict pozitive
+
 -> Exercitiul #476 <-
 
 Indicați expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natural memorat în variabila întreagă n este divizibil cu 2, dar NU şi cu 5.
 
 Raspuns: !((n%2==1) || (n%5==0))
+
+-> Exercitiul #493 <-
+
+Variabilele x, y și z sunt de tip întreg și memorează câte un număr natural nenul. Dacă expresia C/C++ !(z<=y) && y>x are valoarea 1, indicați șirul crescător format cu valorile acestor variabile, în ordinea precizată mai jos.
+
+Raspuns: x, y, z
 
 -> Exercitiul #498 <-
 
@@ -487,6 +708,12 @@ Variabila x este de tip întreg și poate memora un număr natural cu cel mult d
 
 Raspuns: 6
 
+-> Exercitiul #510 <-
+
+Variabila a memorează elementele unui tablou bidimensional cu 100 de linii şi 100 de coloane, numerotate de la 1 la 100. Un element aflat pe diagonala secundară a tabloului poate fi accesat prin:
+
+Raspuns: a[42][59]
+
 -> Exercitiul #518 <-
 
 Valoarea expresiei C/C++ 7+5/2  este
@@ -499,17 +726,215 @@ Indicaţi expresia care are valoarea 1 dacă şi numai dacă numărul memorat î
 
 Raspuns: (x/10)*(x%10)!=0 && x/100==0
 
+-> Exercitiul #529 <-
+
+Indicaţi expresia care are valoarea 1 dacă şi numai dacă numărul memorat în variabila întreagă x aparţine mulţimii {1,2,3}.
+
+Raspuns: x==1 || x==2 || x==3
+
+-> Exercitiul #533 <-
+
+Se consideră subprogramul C/C++ f, definit mai jos.
+
+void f(int x)
+{ cout<<x;
+  if(x>0)
+  { if(x%2==0)
+      cout<<'*';
+    f(x/2);
+  }
+}
+
+Ce se afișează în urma apelului de mai jos.
+
+f(9);
+
+Raspuns: 94*2*10
+
+-> Exercitiul #538<-
+
+Se consideră subprogramul C/C++ f, definit mai jos.
+
+int f(int x, int y)
+{ if(x*2>y)
+    return x;
+  return f(x*2,y);
+}
+
+Scrieți valoarea lui f(2,20).
+
+Raspuns: 16
+
+-> Exercitiul #545 <-
+
+Indicați care dintre expresiile C/C++ de mai jos are valoarea 1 dacă și numai dacă numărul memorat în variabila întreagă x aparține reuniunii de intervale [-3,-1]∪[1,3].
+
+Raspuns: !(x<-3 || x>-1) || !(x<1 || x>3)
+
 -> Exercitiul #549 <-
 
 Expresia C/C++ !(-20>=x) && (x<=-10) || (x>=-5) && !(x>5) are valoarea 1 dacă şi numai dacă valoarea memorată de variabila reală x aparține reuniunii de intervale:
 
 Raspuns: (-20,-10] ∪ [-5,5]
 
+-> Exercitiul #564 <-
+
+Se consideră definite trei variabile de tip int: x, y şi z. O expresie C/C++ care are valoarea 1 dacă şi numai dacă x, y şi z au valori identice este:
+
+Raspuns: x==y && x==z
+
+-> Exercitiul #566 <-
+
+Se consideră secvența de instrucțiuni următoare, în care variabilele i şi j sunt de tip întreg, iar variabila s poate memora un şir de cel mult 20 de caractere.
+
+strcpy(s,"bacalaureat");
+j=strlen(s);
+for(i=0;i<3;i++)
+  if(s[i]!=s[j-i-1])
+    s[i]=s[j-i-1];
+cout<<s;
+
+Şirul afişat în urma executării secvenței este:
+
+Raspuns: taealaureat
+
+-> Exercitiul #580 <-
+
+Subprogramul f este definit mai jos.
+
+int f(int n){
+ int c;
+ if (n==0) return 9;
+ else
+ {c=f(n/10);
+ if (n%10<c) return n%10;
+ else return c;
+ }
+}
+
+Ce valoare are f(5)? Dar f(23159)?
+
+Raspuns: 5 1 
+
+-> Exercitiul #583 <-
+
+Pentru funcţiile f1 şi f2 definite mai jos, stabiliţi care este valoarea lui f1(3). Dar f2(41382)?
+
+long f1(int c)
+{ if (c%2==1) return 1;
+  else return 2;
+}
+long f2(long n)
+{ if (n==0) return 0;
+  else return f1(n%10)+f2(n/10);
+}
+
+Scrieți cele două valori în ordine, separate prin exact un spațiu!
+
+Raspuns: 1 8
+
+-> Exercitiul #598 <-
+
+Subprogramul f este definit mai jos.
+
+int f (int x,int y)
+{
+ if(x<y)return 1+f(x+1,y);
+ if(y<x)return 1+f(y+1,x);
+ return 1;
+}  
+
+Ce valoare are f(8,4)?
+
+Raspuns: 5
+
+-> Exercitiul #599 <-
+
+Subprogramul p este definit mai jos.
+
+void p (int x)
+{cout<<x; | printf(“%d”,x);
+ if(x!=0){p(x/10);
+ cout<<x%10; | printf(“%d”,x%10);}}
+
+Ce se afişează în urma apelului următor?
+
+p(123);
+
+Raspuns: 1231210123
+
+-> Exercitiul #616 <-
+
+Valorile memorate de componentele tabloului v, cu indicii de la 0 la 5, sunt, în această ordine: 973 51 75 350 350 15. Se consideră subprogramul tablou cu definiţia următoare. Care dintre următoarele expresii are valoarea 2?
+
+int tablou(int i, int v[])
+{
+ if(i==0) return 0;
+ if(v[i]!=v[i-1]) return tablou(i-1,v);
+ return 1;
+}
+
+Raspuns: tablou(4,v)+tablou(5,v)
+
+-> Exercitiul #617 <-
+
+Care este antetul corect al subprogramului C/C++ cifre, care primeşte prin intermediul primului parametru, x, un număr natural şi furnizează prin intermediul celui de-al doilea parametru, y, suma cifrelor numărului natural x?
+
+Raspuns: void cifre(int x, int &y)
+
+-> Exercitiul #633 <-
+
+Subprogramul alfa este definit mai jos.
+
+int alfa(int u)
+{ if (u==0) return 3;
+  else return alfa(u-1)+3*u-2;
+}
+
+Ce valoarea are alfa(6)?
+
+Pentru ce valoare a parametrului u, alfa(u) are valoarea 25?
+
+Raspuns: 54 4
+
 -> Exercitiul #638 <-
 
 Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul memorat în variabila întreagă x aparţine mulţimii {2015, 2016, 2017}.
 
 Raspuns: x==2015 || !(x<2016 || x>2017)
+
+-> Exercitiul #652 <-
+
+Variabilele x, y și z sunt de tip întreg și memorează numere naturale din intervalul [1,103]. Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă valoarea variabilei x este strict mai mare decât valoarea oricăreia dintre variabilele y și z.
+
+Raspuns: x*y>y*z && x*z>y*z
+
+-> Exercitiul #653 <-
+
+Se consideră algoritmul de mai jos, reprezentat în pseudocod.
+
+citeşte n
+(număr natural nenul)
+k ← 1
+m ← 1
+┌cât timp n>9 execută
+│┌dacă n%10=[n/10]%10 atunci
+││ k ← k+1
+││┌dacă k>m atunci
+│││ m ← k
+││└■
+││altfel
+││ k ← 1
+│└■
+│ n ← [n/10]
+└■
+scrie m
+
+S-a notat cu a%b restul împărţirii numărului natural a la numărul natural nenul b şi cu [c] partea întreagă a numărului real c.
+
+Scrieţi valoarea afişată în urma executării algoritmului dacă se citeşte numărul 81112337.
+
+Raspuns: 3
 
 -> Exercitiul #661 <-
 
@@ -549,6 +974,14 @@ Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natu
 
 Raspuns: x%10==x
 
+-> Exercitiul #792 <-
+
+Indicați șirul afișat pe ecran în urma executării instrucțiunii următoare:
+
+cout<<strstr(”veni,vidi,vici”,”vi”);
+
+Raspuns: vidi,vici
+
 -> Exercitiul #798 <-
 
 Se consideră algoritmul de mai jos, reprezentat în pseudocod. S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b.
@@ -573,6 +1006,32 @@ scrie s
 Scrieți valoarea afișată dacă se citesc, în această ordine, numerele 7, 4.
 
 Raspuns: 16
+
+-> Exercitiul #806 <-
+
+Se consideră algoritmul de mai jos, reprezentat în pseudocod. S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b, cu [a] partea întreagă a numărului real a, iar cu sqrt(x) rădăcina pătrată a numărului pozitiv x.
+
+citeşte n 
+   (număr natural nenul) 
+ k←0 
+ i←1 
+┌cât timp i≤n execută
+│ citeşte x  
+│   (număr natural nenul) 
+│ y←2  
+│┌cât timp x>1 și x%y≠0 execută
+││ y←y+1 
+│└■
+│┌dacă k<[x/y] atunci 
+││ k←[x/y] 
+│└■
+│ i←i+1  
+└■
+ scrie k 
+
+Scrieți valoarea afișată dacă se citesc, în această ordine, numerele 4, 5, 24, 3, 45.
+
+Raspuns: 15
 
 -> Exercitiul #812 <-
 
@@ -718,6 +1177,12 @@ Variabila x este de tip întreg. Indicați o expresie care are valoarea 1 dacă 
 
 Raspuns: !(x>3) || !(x<=10)
 
+-> Exercitiul #918 <-
+
+Variabilele x și y sunt de tip întreg și memorează câte un număr natural nenul. O expresie echivalentă cu !(x%y!=0||y<2) poate fi:
+
+Raspuns: (x/y)*y==x && y>=2
+
 -> Exercitiul #976 <-
 
 Variabilele di și dj sunt de tip întreg. Indicați expresia C/C++ care are valoarea 1 dacă și numai dacă perechea (di,dj) este una dintre următoarele: (-2,-1), (-2,1), (-1,-2), (-1,2), (1,-2), (1,2), (2,-1), (2,1).
@@ -754,6 +1219,12 @@ Se consideră două tablouri unidimensionale A și B: A=(21,18,14,11,4) , iar B=
 
 Raspuns: (46,21,18,17,14,14,11,8,4,3)
 
+-> Exercitiul #986 <-
+
+Pentru a putea memora un tablou bidimensional cu maximum 21 de elemente, numere reale, variabila A se poate declara astfel:
+
+Raspuns: float A[3][7];
+
 -> Exercitiul #993 <-
 
 În urma interclasării în ordine crescătoare a tablourilor A și B se obține tabloul cu elementele (10,12,23,25,2019,2209), în această ordine. Elementele tablourilor A și B pot fi (în ordinea memorării lor în tablou):
@@ -767,6 +1238,22 @@ B=(2209,25,23,12)
 Indicați expresia C/C++ cu valoarea 1.
 
 Raspuns: 19/21*3==3/19*21
+
+-> Exercitiul #1000 <-
+
+Variabilele x și y sunt întregi. Indicați expresia C/C++ echivalentă cu cea de mai jos.
+
+(x<3)&&(y>=5)
+
+Raspuns: !(!(x<3)||!(y>=5))
+
+-> Exercitiul #1006 <-
+
+Indicați numerele pe care le pot memora variabilele întregi x şi y, astfel încât valoarea expresiei C/C++ de mai jos să fie 1.
+
+x/2+x%y-x/y==0
+
+Raspuns: x=4 și y=2
 
 -> Exercitiul #1045 <-
 
